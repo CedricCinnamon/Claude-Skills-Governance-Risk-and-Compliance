@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Claude Code skills for Governance, Risk & Compliance — ISO 27001, SOC 2, FedRAMP, GDPR, and HIPAA.",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "pluginRoot": "./plugins"
   },
   "plugins": [
@@ -14,7 +14,7 @@
       "name": "iso27001",
       "source": "./plugins/iso27001",
       "description": "Expert ISO 27001 gap analysis, policy writing, Annex A control guidance, SoA generation, and risk register creation for both 2013 and 2022 versions.",
-      "version": "1.0.0",
+      "version": "0.1.0",
       "author": {
         "name": "Hemant Naik",
         "email": "hemant.naik@gmail.com"
@@ -29,7 +29,7 @@
       "name": "soc2",
       "source": "./plugins/soc2",
       "description": "Expert SOC 2 compliance advisor covering all Trust Services Criteria — gap analysis, policy drafting, control documentation, audit evidence, and vendor risk.",
-      "version": "1.0.0",
+      "version": "0.1.0",
       "author": {
         "name": "Hemant Naik",
         "email": "hemant.naik@gmail.com"
@@ -44,7 +44,7 @@
       "name": "fedramp",
       "source": "./plugins/fedramp",
       "description": "End-to-end FedRAMP authorization guidance — readiness assessments, SSP narratives, POA&M management, NIST 800-53 Rev 5 control mapping, and ConMon support.",
-      "version": "1.0.0",
+      "version": "0.1.0",
       "author": {
         "name": "Hemant Naik",
         "email": "hemant.naik@gmail.com"
@@ -59,7 +59,7 @@
       "name": "gdpr-compliance",
       "source": "./plugins/gdpr-compliance",
       "description": "GDPR compliance assistant — code and system audits, privacy notice drafting, DPAs, DPIAs, data flow reviews, and authoritative article-cited Q&A.",
-      "version": "1.0.0",
+      "version": "0.1.0",
       "author": {
         "name": "Hemant Naik",
         "email": "hemant.naik@gmail.com"
@@ -74,7 +74,7 @@
       "name": "hipaa-compliance",
       "source": "./plugins/hipaa-compliance",
       "description": "HIPAA compliance advisor covering Privacy Rule, Security Rule, and Breach Notification — document generation, technical safeguards for cloud, and breach response.",
-      "version": "1.0.0",
+      "version": "0.1.0",
       "author": {
         "name": "Hemant Naik",
         "email": "hemant.naik@gmail.com"
