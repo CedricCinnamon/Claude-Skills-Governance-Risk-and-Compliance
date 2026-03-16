@@ -1,0 +1,13 @@
+{
+  "name": "soc2",
+  "description": "Expert SOC 2 compliance advisor covering all Trust Services Criteria — gap analysis, policy drafting, control documentation, audit evidence, and vendor risk.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hemant Naik",
+    "email": "hemant.naik@gmail.com"
+  },
+  "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
+  "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "license": "MIT",
+  "keywords": ["soc2", "aicpa", "trust-services", "audit", "compliance", "grc"]
+}
