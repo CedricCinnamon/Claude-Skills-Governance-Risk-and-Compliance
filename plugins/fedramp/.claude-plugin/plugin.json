@@ -1,6 +1,6 @@
 {
   "name": "fedramp",
-  "description": "End-to-end FedRAMP authorization guidance — readiness assessments, SSP narratives, POA&M management, NIST 800-53 Rev 5 control mapping, and ConMon support.",
+  "description": "End-to-end FedRAMP authorization guidance \u2014 readiness assessments, SSP narratives, POA&M management, NIST 800-53 Rev 5 control mapping, and ConMon support.",
   "version": "0.1.0",
   "author": {
     "name": "Hemant Naik",
@@ -9,6 +9,14 @@
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
-  "category": "compliance",
-  "keywords": ["fedramp", "nist", "ato", "ssp", "poam", "federal", "cloud-security", "grc"]
+  "keywords": [
+    "fedramp",
+    "nist",
+    "ato",
+    "ssp",
+    "poam",
+    "federal",
+    "cloud-security",
+    "grc"
+  ]
 }

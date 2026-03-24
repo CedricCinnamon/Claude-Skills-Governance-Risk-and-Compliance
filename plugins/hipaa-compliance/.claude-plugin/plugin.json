@@ -1,6 +1,6 @@
 {
   "name": "hipaa-compliance",
-  "description": "HIPAA compliance advisor covering Privacy Rule, Security Rule, and Breach Notification — document generation, technical safeguards for cloud, and breach response.",
+  "description": "HIPAA compliance advisor covering Privacy Rule, Security Rule, and Breach Notification \u2014 document generation, technical safeguards for cloud, and breach response.",
   "version": "0.1.0",
   "author": {
     "name": "Hemant Naik",
@@ -9,6 +9,13 @@
   "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
-  "category": "compliance",
-  "keywords": ["hipaa", "phi", "healthcare", "baa", "privacy-rule", "security-rule", "grc"]
+  "keywords": [
+    "hipaa",
+    "phi",
+    "healthcare",
+    "baa",
+    "privacy-rule",
+    "security-rule",
+    "grc"
+  ]
 }
