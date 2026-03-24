@@ -10,6 +10,5 @@
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
   "category": "compliance",
-  "keywords": ["soc2", "aicpa", "trust-services", "audit", "compliance", "grc"],
-  "skills": ["./skills/soc2"]
+  "keywords": ["soc2", "aicpa", "trust-services", "audit", "compliance", "grc"]
 }

@@ -18,8 +18,7 @@
       },
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "category": "compliance",
-      "keywords": ["iso27001", "isms", "compliance", "security", "grc", "gap-analysis", "annex-a"],
-      "skills": ["./plugins/iso27001/skills/iso27001"]
+      "keywords": ["iso27001", "isms", "compliance", "security", "grc", "gap-analysis", "annex-a"]
     },
     {
       "name": "soc2",
@@ -32,8 +31,7 @@
       },
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "category": "compliance",
-      "keywords": ["soc2", "aicpa", "trust-services", "audit", "compliance", "grc"],
-      "skills": ["./plugins/soc2/skills/soc2"]
+      "keywords": ["soc2", "aicpa", "trust-services", "audit", "compliance", "grc"]
     },
     {
       "name": "fedramp",
@@ -46,8 +44,7 @@
       },
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "category": "compliance",
-      "keywords": ["fedramp", "nist", "ato", "ssp", "poam", "federal", "cloud-security", "grc"],
-      "skills": ["./plugins/fedramp/skills/fedramp"]
+      "keywords": ["fedramp", "nist", "ato", "ssp", "poam", "federal", "cloud-security", "grc"]
     },
     {
       "name": "gdpr-compliance",
@@ -60,8 +57,7 @@
       },
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "category": "compliance",
-      "keywords": ["gdpr", "privacy", "data-protection", "dpa", "dpia", "eu", "grc"],
-      "skills": ["./plugins/gdpr-compliance/skills/gdpr-compliance"]
+      "keywords": ["gdpr", "privacy", "data-protection", "dpa", "dpia", "eu", "grc"]
     },
     {
       "name": "hipaa-compliance",
@@ -74,8 +70,7 @@
       },
       "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
       "category": "compliance",
-      "keywords": ["hipaa", "phi", "healthcare", "baa", "privacy-rule", "security-rule", "grc"],
-      "skills": ["./plugins/hipaa-compliance/skills/hipaa-compliance"]
+      "keywords": ["hipaa", "phi", "healthcare", "baa", "privacy-rule", "security-rule", "grc"]
     }
   ]
 }

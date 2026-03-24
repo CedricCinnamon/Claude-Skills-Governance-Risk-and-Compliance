@@ -10,6 +10,5 @@
   "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
   "license": "MIT",
   "category": "compliance",
-  "keywords": ["gdpr", "privacy", "data-protection", "dpa", "dpia", "eu", "grc"],
-  "skills": ["./skills/gdpr-compliance"]
+  "keywords": ["gdpr", "privacy", "data-protection", "dpa", "dpia", "eu", "grc"]
 }
