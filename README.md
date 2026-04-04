@@ -37,6 +37,8 @@ Benchmarked across 18 test cases (2 per framework) using the eval framework — 
 
 ## What Are Claude Skills?
 
+[![Watch the demo](https://img.youtube.com/vi/-IBLNR0N2vE/maxresdefault.jpg)](https://youtu.be/-IBLNR0N2vE)
+
 Claude Skills are installable knowledge packages that extend Claude's capabilities for specific domains. A skill is a `.skill` file — a bundled archive containing a `SKILL.md` instruction file and optional reference materials — that you upload to Claude once and use across all your conversations.
 
 Once installed, a skill activates **automatically** when your conversation touches its topic area. You don't need to invoke it by name or use special commands. Claude simply becomes a deeper expert in that domain for the duration of your session.
