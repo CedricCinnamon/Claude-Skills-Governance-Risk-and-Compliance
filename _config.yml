@@ -16,5 +16,6 @@ exclude:
 
 # Keep the eval HTML and images as static passthrough files
 include:
+  - "index.html"
   - "grc-skills-eval-results.html"
   - "Installing Skills in Claude.png"
