@@ -1,0 +1,12 @@
+{
+  "eval_id": 79,
+  "eval_name": "essential-eight-ism-mapping",
+  "prompt": "Our organisation is required to achieve Essential Eight Maturity Level 2 by the end of this financial year. How does the Essential Eight relate to the broader ISM? Which ISM chapters and control areas does each of the eight strategies map to, and what does ML2 require us to implement for each strategy?",
+  "assertions": [
+    "Explains that the Essential Eight is a prioritised subset of ISM controls, not a separate standard — Essential Eight compliance does not equal full ISM compliance",
+    "Maps each of the 8 strategies to their primary ISM chapters (e.g., patch applications and OS → Ch. 14 System Management; MFA → Ch. 6/9/19; application control → Ch. 13 System Hardening)",
+    "Describes ML2 as requiring controls to be mostly aligned and addressing sophisticated threats, and distinguishes it from ML1 and ML3",
+    "Covers MFA requirement at ML2: MFA for all remote access and privileged accounts",
+    "States that ASD publishes an Essential Eight to ISM control mapping document"
+  ]
+}

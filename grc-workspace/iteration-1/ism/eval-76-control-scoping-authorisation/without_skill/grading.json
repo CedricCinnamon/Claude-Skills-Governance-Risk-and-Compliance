@@ -1,0 +1,33 @@
+{
+  "eval_id": 76,
+  "eval_name": "control-scoping-authorisation",
+  "configuration": "without_skill",
+  "passed": false,
+  "expectations": [
+    {
+      "text": "States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)",
+      "passed": false,
+      "evidence": "The response describes control applicability using MUST/SHOULD/MAY/MAY NOT language and notes that OFFICIAL: Sensitive sits above OFFICIAL but below PROTECTED, but never references the ISM's NC (Not Classified) and OS (Official Sensitive) applicability markings or the stacking rule by those names."
+    },
+    {
+      "text": "Mentions the System Security Plan (SSP) as the primary authorisation artefact",
+      "passed": true,
+      "evidence": "SSP is prominently featured: 'Develop and maintain a System Security Plan (SSP) that documents the system's security architecture...' and in Stage 2: 'System Security Plan (SSP): Describes the system, its security architecture, threat model, control implementation status, and residual risks.'"
+    },
+    {
+      "text": "Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor",
+      "passed": false,
+      "evidence": "The response outlines a 6-stage authorisation process (Categorisation, Documentation, IRAP Assessment, Risk Treatment, Authorisation Decision, Continuous Monitoring) but does not use the ISM's canonical terminology of 'define, select, implement, assess, authorise, monitor' for the risk management cycle."
+    },
+    {
+      "text": "Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above",
+      "passed": false,
+      "evidence": "The response recommends IRAP: 'Engage an IRAP assessor... The IRAP assessor conducts an independent review...' but does not state that IRAP is mandatory for PROTECTED and above while being recommended (but not mandatory) for OFFICIAL: Sensitive systems."
+    },
+    {
+      "text": "Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)",
+      "passed": false,
+      "evidence": "The response covers system hardening, patch management, logging/monitoring, and personnel security as control domains, but does not reference them by ISM chapter numbers (Ch. 13, 14, 15, 6). No chapter numbers are cited anywhere in the response."
+    }
+  ]
+}

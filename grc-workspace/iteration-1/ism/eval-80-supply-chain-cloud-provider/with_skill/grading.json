@@ -1,0 +1,33 @@
+{
+  "eval_id": 80,
+  "eval_name": "supply-chain-cloud-provider",
+  "configuration": "with_skill",
+  "passed": true,
+  "expectations": [
+    {
+      "text": "Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract",
+      "passed": true,
+      "evidence": "When you sign a contract requiring ISM compliance, you are contractually and practically subject to the same obligations as the agency itself for the systems and data in scope."
+    },
+    {
+      "text": "States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply",
+      "passed": true,
+      "evidence": "Chapter 3 (Procurement & Outsourcing) explicitly requires government agencies to ensure their outsourced service providers and cloud vendors implement ISM-aligned security controls. The response also references the ASD Cloud Services Certification Program (CSCP) for cloud-specific assessment requirements."
+    },
+    {
+      "text": "Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)",
+      "passed": true,
+      "evidence": "The response explicitly cites: Priority 2 — System Hardening (Chapter 13); Priority 5 — Patch Management (Chapter 14); Priority 4 — System Monitoring and Logging (Chapter 15); Priority 6 — Network Segmentation (Chapter 19); Priority 3 — Cryptography (Chapter 20)."
+    },
+    {
+      "text": "Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers",
+      "passed": true,
+      "evidence": "Yes. In practice, an IRAP assessment will almost certainly be required... Mandatory for systems handling PROTECTED and above... The obligation attaches to the system, not the entity operating it."
+    },
+    {
+      "text": "Mentions the SSP as a document the cloud provider may need to produce or contribute to",
+      "passed": true,
+      "evidence": "Produce a System Security Plan (SSP) — Document system boundary, classification, controls implemented, and risk register. The SSP is described as 'the primary document' and 'the centrepiece of the assessment' throughout the response."
+    }
+  ]
+}

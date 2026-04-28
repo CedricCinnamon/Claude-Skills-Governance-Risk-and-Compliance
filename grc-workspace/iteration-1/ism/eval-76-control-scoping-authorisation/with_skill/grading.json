@@ -1,0 +1,33 @@
+{
+  "eval_id": 76,
+  "eval_name": "control-scoping-authorisation",
+  "configuration": "with_skill",
+  "passed": false,
+  "expectations": [
+    {
+      "text": "States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)",
+      "passed": true,
+      "evidence": "\"As an OS system, your agency must implement NC + OS controls across all relevant guideline chapters. This is the standard baseline for most federal agency systems.\""
+    },
+    {
+      "text": "Mentions the System Security Plan (SSP) as the primary authorisation artefact",
+      "passed": true,
+      "evidence": "\"Produce and maintain a current System Security Plan (SSP) as the primary authorisation artefact.\""
+    },
+    {
+      "text": "Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor",
+      "passed": true,
+      "evidence": "Section 3 explicitly lists all six steps: Step 1 — Define the System, Step 2 — Select Controls, Step 3 — Implement Controls, Step 4 — Assess Controls (IRAP Assessment), Step 5 — Authorise the System (ATO), Step 6 — Monitor Continuously."
+    },
+    {
+      "text": "Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above",
+      "passed": false,
+      "evidence": "The response recommends IRAP for OS systems (\"strongly recommended by ASD and is standard practice for federal government systems\") but explicitly states it is NOT mandatory at OS level: \"IRAP assessment is not legally mandatory at OS level\". It does not state that IRAP is mandatory for PROTECTED and above — the mandatory nature at PROTECTED+ classification is not mentioned."
+    },
+    {
+      "text": "Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)",
+      "passed": true,
+      "evidence": "All four chapters are explicitly covered: Chapter 13 — System Hardening (Essential Eight overlap), Chapter 14 — System Management (Essential Eight overlap), Chapter 15 — System Monitoring, and Chapter 6 — Personnel Security."
+    }
+  ]
+}

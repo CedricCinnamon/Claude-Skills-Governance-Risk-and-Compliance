@@ -1,0 +1,33 @@
+{
+  "eval_id": 78,
+  "eval_name": "system-hardening-chapter13",
+  "configuration": "without_skill",
+  "passed": true,
+  "expectations": [
+    {
+      "text": "References ISM Chapter 13 (System Hardening) as the relevant guideline",
+      "passed": true,
+      "evidence": "The response title is 'ISM Chapter 13 System Hardening: Requirements and Evidence for Windows Server 2022' and the introduction states 'the Australian Government Information Security Manual (ISM)... dedicates Chapter 13 to System Hardening. This chapter establishes baseline security controls...'"
+    },
+    {
+      "text": "Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide",
+      "passed": true,
+      "evidence": "Disable unnecessary services: 'Remove or disable all unnecessary operating system components, features, and services.' ASD hardening guide: 'Configure the OS in accordance with a hardening standard. ASD's Windows Server 2022 hardening guide...' Rename/disable default accounts: 'The built-in Administrator account should be renamed or disabled' (in Authentication Hardening section)."
+    },
+    {
+      "text": "Mentions application allow-listing as a key ISM/Essential Eight control",
+      "passed": true,
+      "evidence": "'Application whitelisting (now called application control) must be implemented. ASD mandates this as part of the Essential Eight. On Windows Server 2022, this is achieved via Windows Defender Application Control (WDAC) or AppLocker.'"
+    },
+    {
+      "text": "States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)",
+      "passed": true,
+      "evidence": "'Apply the principle of least privilege.' and 'Time-based or just-in-time (JIT) privileged access should be considered for administrative access.' PAM mentioned: 'Documentation of JIT or PAM (Privileged Access Management) solution if deployed.'"
+    },
+    {
+      "text": "Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy",
+      "passed": true,
+      "evidence": "CIS benchmark scan results: 'Results of a CIS Benchmark or ACSC hardening assessment tool run against the server.' Configuration screenshots: mentioned multiple times. Software allow-list policy: 'Application control policy export (WDAC XML policy file or AppLocker GPO export) and evidence it is in enforce mode.' PAM: 'Documentation of JIT or PAM (Privileged Access Management) solution if deployed' — PAM documentation rather than logs specifically, but the control domain is covered."
+    }
+  ]
+}

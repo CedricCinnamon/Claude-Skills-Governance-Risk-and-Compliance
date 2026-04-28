@@ -1,0 +1,33 @@
+{
+  "eval_id": 79,
+  "eval_name": "essential-eight-ism-mapping",
+  "configuration": "without_skill",
+  "passed": false,
+  "expectations": [
+    {
+      "text": "Explains that the Essential Eight is a prioritised subset of ISM controls, not a separate standard — Essential Eight compliance does not equal full ISM compliance",
+      "passed": true,
+      "evidence": "The Essential Eight is a prioritised subset of mitigation strategies drawn from the ISM... The Essential Eight is not separate from the ISM — it is derived from and cross-referenced within the ISM."
+    },
+    {
+      "text": "Maps each of the 8 strategies to their primary ISM chapters (e.g., patch applications and OS → Ch. 14 System Management; MFA → Ch. 6/9/19; application control → Ch. 13 System Hardening)",
+      "passed": false,
+      "evidence": "The response uses incorrect ISM chapter numbers throughout. It maps Application Control and Patch Applications to 'Guidelines for System Hardening' but assigns these to different chapter numbers than the actual ISM (e.g., it lists Ch. 7 as 'Guidelines for Identity and Access Management' and Ch. 13 as 'Guidelines for Networking'). The expected mapping (e.g., Ch. 13 for hardening, Ch. 14 for system management, Ch. 6/9/19 for MFA) is not present; chapter numbering is inconsistent with the ISM structure."
+    },
+    {
+      "text": "Describes ML2 as requiring controls to be mostly aligned and addressing sophisticated threats, and distinguishes it from ML1 and ML3",
+      "passed": true,
+      "evidence": "Organisations achieving ML2 have implemented controls that are generally aligned with mitigating targeted intrusions and more capable adversaries than those addressed at ML1."
+    },
+    {
+      "text": "Covers MFA requirement at ML2: MFA for all remote access and privileged accounts",
+      "passed": true,
+      "evidence": "MFA is used for all users accessing internet-facing services (e.g., remote access solutions, cloud services, webmail). MFA is used for all privileged users accessing systems and applications."
+    },
+    {
+      "text": "States that ASD publishes an Essential Eight to ISM control mapping document",
+      "passed": false,
+      "evidence": "The response only says 'Organisations should consult the current ASD Essential Eight Maturity Model document (available on the Australian Cyber Security Centre website)' and does not state that ASD publishes a dedicated Essential Eight to ISM control mapping document, nor does it provide a URL to such a document."
+    }
+  ]
+}

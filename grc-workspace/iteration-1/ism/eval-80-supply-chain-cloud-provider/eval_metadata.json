@@ -1,0 +1,12 @@
+{
+  "eval_id": 80,
+  "eval_name": "supply-chain-cloud-provider",
+  "prompt": "We are a private sector company that has just won a contract to provide cloud services to an Australian federal government agency. The contract requires ISM compliance. What are our obligations, what controls are most critical for our cloud environment, and do we need an IRAP assessment even though we are not a government entity ourselves?",
+  "assertions": [
+    "Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract",
+    "States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply",
+    "Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)",
+    "Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers",
+    "Mentions the SSP as a document the cloud provider may need to produce or contribute to"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "eval_id": 77,
+  "eval_name": "irap-assessment-preparation",
+  "prompt": "Our agency is preparing for an IRAP assessment of our PROTECTED-level system next quarter. What artefacts do we need to prepare, what should we expect during the assessment, and what happens after the IRAP report is issued? We have not had an IRAP assessment before.",
+  "assertions": [
+    "Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts",
+    "States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system",
+    "Explains post-assessment pathway: IRAP report → POA&M to address findings → Authorising Official reviews residual risk → ATO sign-off",
+    "States that re-assessment is required every 24 months or after significant change",
+    "Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level"
+  ]
+}

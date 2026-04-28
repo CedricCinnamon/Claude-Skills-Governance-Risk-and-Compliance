@@ -1,0 +1,33 @@
+{
+  "eval_id": 78,
+  "eval_name": "system-hardening-chapter13",
+  "configuration": "with_skill",
+  "passed": true,
+  "expectations": [
+    {
+      "text": "References ISM Chapter 13 (System Hardening) as the relevant guideline",
+      "passed": true,
+      "evidence": "The response title is \"ISM Chapter 13 — System Hardening: Requirements and Evidence for Windows Server 2022\" and the overview section states \"Chapter 13 sits within the Protect function of the ISM framework.\""
+    },
+    {
+      "text": "Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide",
+      "passed": true,
+      "evidence": "Section 1 (Operating System Hardening) covers: \"Remove all Windows roles, role services, and features that are not required\", \"Disable all default and built-in accounts that are not needed. The built-in local Administrator account must be renamed\", and \"Apply the ASD hardening guidance for Windows Server. ASD publishes a dedicated hardening guide (Hardening Microsoft Windows Server).\""
+    },
+    {
+      "text": "Mentions application allow-listing as a key ISM/Essential Eight control",
+      "passed": true,
+      "evidence": "\"This is one of the highest-priority Chapter 13 controls and maps directly to the Essential Eight 'Application control' strategy.\" Section 3 is dedicated to Application Control (Allow-Listing)."
+    },
+    {
+      "text": "States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)",
+      "passed": true,
+      "evidence": "\"No standing administrative access. Standard user accounts must be used for day-to-day operations; administrative credentials must only be used when performing administrative tasks.\" The section is titled \"Least Privilege and Privileged Access Management\" and covers PAM concepts including JIT access, PAWs, and LAPS."
+    },
+    {
+      "text": "Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy",
+      "passed": true,
+      "evidence": "Evidence section covers: hardening checklists (\"Application hardening checklists\", \"ASD Windows Server Hardening Guide gap comparison\"), configuration screenshots (\"Group Policy export or baseline configuration report\", \"BIOS/UEFI configuration screenshots\"), PAM-related evidence (\"Active Directory group membership reports\", \"LAPS deployment confirmation\", \"Privileged account review records\"), and allow-list policy (\"Application control strategy document\" describes \"what is allowed, how exceptions are handled\"). CIS benchmark scan results are not explicitly named — ASD hardening guide gap comparison is the equivalent referenced."
+    }
+  ]
+}

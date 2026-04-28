@@ -1,0 +1,12 @@
+{
+  "eval_id": 78,
+  "eval_name": "system-hardening-chapter13",
+  "prompt": "We are a state government IT team responsible for hardening a new Windows Server 2022 deployment. Walk us through what the ISM Chapter 13 (System Hardening) requires and what evidence we need to collect to demonstrate compliance during an assessment.",
+  "assertions": [
+    "References ISM Chapter 13 (System Hardening) as the relevant guideline",
+    "Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide",
+    "Mentions application allow-listing as a key ISM/Essential Eight control",
+    "States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)",
+    "Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy"
+  ]
+}

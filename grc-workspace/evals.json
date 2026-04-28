@@ -1,6 +1,6 @@
 {
   "skill_name": "grc-skills",
-  "description": "Evaluations for all 15 GRC skills: ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001, ISO 27701, DORA, DPDPA, CMMC 2.0, NIST AI RMF, SWIFT CSP",
+  "description": "Evaluations for all 16 GRC skills: ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001, ISO 27701, DORA, DPDPA, CMMC 2.0, NIST AI RMF, SWIFT CSP, ISM",
   "evals": [
     {
       "id": 1,
@@ -1014,6 +1014,81 @@
         "Lists evidence to preserve: system memory dumps, log files from SWIFT zone, transaction records, network captures, endpoint forensic images",
         "Identifies immediate containment steps: isolate affected systems from SWIFT zone, revoke compromised operator credentials/tokens, notify SWIFT relationship manager",
         "Outlines what a SWIFT-specific IRP must contain: detection triggers specific to SWIFT, escalation to SWIFT within 24 hours, fraud scenario playbooks, communication with correspondent banks, evidence preservation procedures"
+      ],
+      "files": []
+    },
+    {
+      "id": 76,
+      "skill": "ism",
+      "skill_path": "plugins/ism/skills/ism/SKILL.md",
+      "prompt": "We are a federal government agency in Australia running a cloud-hosted case management system that stores OFFICIAL: Sensitive information. We need to understand: which ISM control applicability markings apply to our system, what the key controls we must implement are, and what the authorisation pathway looks like before we can go live.",
+      "expected_output": "Clear explanation of OS applicability markings (NC + OS controls apply), summary of key control areas across the 22 ISM chapters relevant to OS systems, and a step-by-step system authorisation pathway including SSP, risk assessment, IRAP assessment (recommended for OS), ATO sign-off, and ongoing monitoring.",
+      "assertions": [
+        "States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)",
+        "Mentions the System Security Plan (SSP) as the primary authorisation artefact",
+        "Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor",
+        "Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above",
+        "Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)"
+      ],
+      "files": []
+    },
+    {
+      "id": 77,
+      "skill": "ism",
+      "skill_path": "plugins/ism/skills/ism/SKILL.md",
+      "prompt": "Our agency is preparing for an IRAP assessment of our PROTECTED-level system next quarter. What artefacts do we need to prepare, what should we expect during the assessment, and what happens after the IRAP report is issued? We have not had an IRAP assessment before.",
+      "expected_output": "Comprehensive IRAP preparation guidance including: full list of required artefacts (SSP, network diagrams, asset register, risk register, policy suite, control evidence, POA&M), what the assessor evaluates, the typical assessment process, and the post-assessment pathway to Authorisation to Operate (ATO).",
+      "assertions": [
+        "Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts",
+        "States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system",
+        "Explains post-assessment pathway: IRAP report → POA&M to address findings → Authorising Official reviews residual risk → ATO sign-off",
+        "States that re-assessment is required every 24 months or after significant change",
+        "Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level"
+      ],
+      "files": []
+    },
+    {
+      "id": 78,
+      "skill": "ism",
+      "skill_path": "plugins/ism/skills/ism/SKILL.md",
+      "prompt": "We are a state government IT team responsible for hardening a new Windows Server 2022 deployment. Walk us through what the ISM Chapter 13 (System Hardening) requires and what evidence we need to collect to demonstrate compliance during an assessment.",
+      "expected_output": "Detailed guidance on ISM Chapter 13 system hardening requirements including: OS hardening steps (remove unnecessary services, disable default accounts, apply vendor hardening guides), application hardening, firmware security (Secure Boot), least privilege/PAM, and the specific evidence types an assessor will look for.",
+      "assertions": [
+        "References ISM Chapter 13 (System Hardening) as the relevant guideline",
+        "Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide",
+        "Mentions application allow-listing as a key ISM/Essential Eight control",
+        "States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)",
+        "Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy"
+      ],
+      "files": []
+    },
+    {
+      "id": 79,
+      "skill": "ism",
+      "skill_path": "plugins/ism/skills/ism/SKILL.md",
+      "prompt": "Our organisation is required to achieve Essential Eight Maturity Level 2 by the end of this financial year. How does the Essential Eight relate to the broader ISM? Which ISM chapters and control areas does each of the eight strategies map to, and what does ML2 require us to implement for each strategy?",
+      "expected_output": "Clear explanation of the Essential Eight as a prioritised ISM subset, mapping of each of the eight strategies to their ISM chapters, and ML2 implementation requirements for each strategy — covering application control, patching, macro settings, app hardening, admin privilege restriction, OS patching, MFA, and backups.",
+      "assertions": [
+        "Explains that the Essential Eight is a prioritised subset of ISM controls, not a separate standard — Essential Eight compliance does not equal full ISM compliance",
+        "Maps each of the 8 strategies to their primary ISM chapters (e.g., patch applications and OS → Ch. 14 System Management; MFA → Ch. 6/9/19; application control → Ch. 13 System Hardening)",
+        "Describes ML2 as requiring controls to be 'mostly aligned and addressing sophisticated threats', and distinguishes it from ML1 and ML3",
+        "Covers MFA requirement at ML2: MFA for all remote access and privileged accounts",
+        "States that ASD publishes an Essential Eight to ISM control mapping document"
+      ],
+      "files": []
+    },
+    {
+      "id": 80,
+      "skill": "ism",
+      "skill_path": "plugins/ism/skills/ism/SKILL.md",
+      "prompt": "We are a private sector company that has just won a contract to provide cloud services to an Australian federal government agency. The contract requires ISM compliance. What are our obligations, what controls are most critical for our cloud environment, and do we need an IRAP assessment even though we are not a government entity ourselves?",
+      "expected_output": "Explanation of ISM applicability to supply chain/private sector providers under government contracts, identification of the most relevant ISM chapters for cloud environments (Ch. 3 Procurement/Outsourcing, Ch. 19 Networking, Ch. 13 Hardening, Ch. 14 Management, Ch. 15 Monitoring), and clear guidance on whether IRAP is required for supply chain providers.",
+      "assertions": [
+        "Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract",
+        "States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply",
+        "Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)",
+        "Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers",
+        "Mentions the SSP as a document the cloud provider may need to produce or contribute to"
       ],
       "files": []
     }

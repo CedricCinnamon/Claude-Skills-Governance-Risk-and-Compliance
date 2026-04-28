@@ -1,0 +1,33 @@
+{
+  "eval_id": 77,
+  "eval_name": "irap-assessment-preparation",
+  "configuration": "with_skill",
+  "passed": true,
+  "expectations": [
+    {
+      "text": "Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts",
+      "passed": true,
+      "evidence": "All four are explicitly listed as core artefacts: \"System Security Plan (SSP)\", \"Network Architecture Diagrams\", \"Asset Register\", and \"Risk Register\" each have their own dedicated subsections under \"Core Artefacts\"."
+    },
+    {
+      "text": "States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system",
+      "passed": true,
+      "evidence": "\"you must engage an assessor who is currently listed on the ASD IRAP Assessors Register. The assessor must be independent of your organisation and the system being assessed.\""
+    },
+    {
+      "text": "Explains post-assessment pathway: IRAP report → POA&M to address findings → Authorising Official reviews residual risk → ATO sign-off",
+      "passed": true,
+      "evidence": "Section 3 explicitly covers: IRAP Assessment Report issued → \"Your agency must produce a POA&M addressing each finding\" → \"Your Authorising Official...reviews the IRAP Assessment Report, the POA&M, and the residual risk profile\" → \"Grant an Authorisation to Operate — accepting residual risk and authorising the system for use\"."
+    },
+    {
+      "text": "States that re-assessment is required every 24 months or after significant change",
+      "passed": true,
+      "evidence": "\"Conduct a re-assessment (new IRAP assessment) every 24 months minimum, or sooner if there is a significant architectural change, a change in classification level, or major new functionality is added.\""
+    },
+    {
+      "text": "Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level",
+      "passed": true,
+      "evidence": "SSP section states \"all applicable ISM controls with justification for inclusion (for a PROTECTED system: NC + OS + P controls across all 22 guideline chapters)\". Scoping section states \"For a PROTECTED system the scope covers all NC, OS, and P controls across all 22 ISM guideline chapters relevant to your system's architecture.\""
+    }
+  ]
+}

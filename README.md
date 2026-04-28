@@ -1,11 +1,11 @@
 # Claude Skills for Governance, Risk & Compliance (GRC)
-Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, and SWIFT Customer Security Programme (CSP) — powered by Claude Skills.
+Expert-level compliance guidance for ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, TSA Cybersecurity, ISO 42001 AI Management System, ISO 27701 Privacy Information Management, DORA Digital Operational Resilience, India's Digital Personal Data Protection Act (DPDPA), CMMC 2.0 Cybersecurity Maturity Model Certification, NIST AI Risk Management Framework, SWIFT Customer Security Programme (CSP), and Australian Information Security Manual (ISM) — powered by Claude Skills.
 
-Benchmarked across 75 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **95%** vs a baseline of **81%** across 375 total assertions.
+Benchmarked across 80 test cases (5 per framework) using the eval framework — each graded against 5 verifiable assertions by independent agents. Skills scored **95%** vs a baseline of **80%** across 400 total assertions.
 
 [![Release: v0.6.0](https://img.shields.io/badge/Release-v0.6.0-brightgreen.svg)](../../releases/tag/v0.6.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills: 15](https://img.shields.io/badge/Skills-15-green.svg)](#the-skills)
+[![Skills: 16](https://img.shields.io/badge/Skills-16-green.svg)](#the-skills)
 [![Built with Claude](https://img.shields.io/badge/Built%20with-Claude-orange.svg)](https://claude.ai)
 [![GitHub Stars](https://img.shields.io/github/stars/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance?style=flat&label=Stars&color=gold)](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance)
 
@@ -31,6 +31,7 @@ Benchmarked across 75 test cases (5 per framework) using the eval framework — 
   - [CMMC 2.0 Cybersecurity Maturity Model Certification](#-cmmc-20-cybersecurity-maturity-model-certification)
   - [NIST AI Risk Management Framework](#-nist-ai-risk-management-framework)
   - [SWIFT Customer Security Programme (CSP)](#-swift-customer-security-programme-csp)
+  - [Australian Information Security Manual (ISM)](#-australian-information-security-manual-ism)
 - [Potential Use Cases](#potential-use-cases)
 - [How to Install a Skill](#how-to-install-a-skill)
 - [Install via Claude Code Marketplace](#install-via-claude-code-marketplace)
@@ -370,6 +371,26 @@ The SWIFT CSP skill turns Claude into an expert advisor on the **SWIFT Customer 
 
 ---
 
+### 16. 🇦🇺 Australian Information Security Manual (ISM)
+
+**File:** `ISM - Claude Skill/ism.skill`
+
+The ISM skill turns Claude into an expert advisor on the **Australian Information Security Manual** — the whole-of-government cybersecurity framework published by the Australian Signals Directorate (ASD) for Australian federal and state government entities and their supply chains. It covers all 22 guideline chapters, the six-step risk management cycle, control applicability markings (NC/OS/PROTECTED/SECRET/TOP SECRET), the IRAP assessment programme, system authorisation, and the Essential Eight relationship.
+
+**What it does:**
+- Applies the ISM's **control applicability marking system** — determines which NC/OS/PROTECTED/SECRET/TOP SECRET controls apply to a system and explains the stacking rule (higher classifications cumulate all lower-level controls)
+- Guides the complete **system authorisation pathway** — defining system boundary, selecting and implementing controls, IRAP assessment, ATO sign-off by the Authorising Official, and ongoing monitoring
+- Prepares agencies for **IRAP assessments** — artefact checklists (SSP, network diagrams, asset register, risk register, policy suite, control evidence), what to expect during assessment, and the post-assessment POA&M → ATO pathway
+- Provides deep-dive guidance across all **22 ISM guideline chapters**: system hardening (Ch. 13), patch management SLAs (Ch. 14), logging/monitoring requirements (Ch. 15), cryptographic standards (Ch. 20), email security (Ch. 18), networking (Ch. 19), and more
+- Explains the **Essential Eight** as a prioritised ISM subset — maps each of the 8 strategies to their ISM chapters, explains ML0–ML3 maturity levels, and distinguishes between Essential Eight compliance and full ISM compliance
+- Advises **private sector suppliers and cloud service providers** on their ISM obligations under government contracts and when IRAP assessments are required even for non-government entities
+- Covers **approved cryptographic standards** (AES-256 for PROTECTED+, TLS 1.2 minimum, SHA-256 minimum, prohibited algorithms) and log retention requirements (18 months minimum for OS/PROTECTED systems)
+- Supports **SSP drafting** — the System Security Plan structure, required sections, classification, security objectives, and how it feeds the ATO decision
+
+**Trigger phrases:** `ISM`, `Information Security Manual`, `ASD cybersecurity`, `IRAP assessment`, `IRAP assessor`, `system authorisation`, `ATO Australia`, `PROTECTED system`, `OFFICIAL Sensitive`, `NC OS PROTECTED`, `Essential Eight`, `ASD compliance`, `Australian government cybersecurity`, `ISM controls`, `ISM gap analysis`, `ISM chapter`, `ISM hardening`, `ISM OSCAL`, `cyber.gov.au`, `ASD IRAP`
+
+---
+
 ## Potential Use Cases
 
 | Scenario | Relevant Skill(s) |
@@ -473,6 +494,14 @@ The SWIFT CSP skill turns Claude into an expert advisor on the **SWIFT Customer 
 | Verifying your service bureau's (Type B) KYC-SA attestation and understanding split control responsibilities | SWIFT CSP |
 | Mapping existing ISO 27001 or PCI DSS controls to CSCF requirements to identify SWIFT-specific gaps | SWIFT CSP + ISO 27001 / PCI DSS |
 | Remediating common CSCF non-compliance patterns: shared VLAN, stale patches, missing SIEM coverage, token inventory gaps | SWIFT CSP |
+| Understanding which ISM control applicability markings (NC/OS/PROTECTED) apply to an Australian government cloud system | ISM |
+| Preparing artefacts for an IRAP assessment of a PROTECTED-level system | ISM |
+| Hardening a Windows Server 2022 deployment to ISM Chapter 13 requirements with evidence checklist | ISM |
+| Mapping Essential Eight Maturity Level 2 requirements to their ISM guideline chapters | ISM |
+| Understanding ISM compliance obligations for a private sector cloud provider under a government contract | ISM |
+| Drafting a System Security Plan (SSP) for ATO sign-off on an OFFICIAL: Sensitive system | ISM |
+| Understanding approved cryptographic algorithms and log retention periods under the ISM | ISM |
+| Comparing ISM requirements with ISO 27001 controls to identify government-specific gaps | ISM + ISO 27001 |
 
 ---
 
@@ -497,6 +526,7 @@ The SWIFT CSP skill turns Claude into an expert advisor on the **SWIFT Customer 
    | 🛡️ CMMC 2.0 Cybersecurity Maturity Model Certification | [cmmc.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/CMMC%20-%20Claude%20Skill/cmmc.skill) |
    | 🤖 NIST AI Risk Management Framework | [nist-ai-rmf.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/NIST%20AI%20RMF%20-%20Claude%20Skill/nist-ai-rmf.skill) |
    | 🏦 SWIFT Customer Security Programme (CSP) | [swift-csp.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/SWIFT%20CSP%20-%20Claude%20Skill/swift-csp.skill) |
+   | 🇦🇺 Australian Information Security Manual (ISM) | [ism.skill](https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance/raw/main/ISM%20-%20Claude%20Skill/ism.skill) |
 
 2. Open Claude and navigate to **Customize → Skills**.
 3. Click **Upload Skill** and select the `.skill` file.
@@ -516,7 +546,7 @@ Add the marketplace and install the skills you need directly from the terminal:
 
 ```shell
 /plugin marketplace add Sushegaad/Claude-Skills-Governance-Risk-and-Compliance
-/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills
+/plugin install iso27001@grc-skills soc2@grc-skills fedramp@grc-skills gdpr-compliance@grc-skills hipaa-compliance@grc-skills nist-csf@grc-skills pci-compliance@grc-skills tsa-compliance@grc-skills iso42001@grc-skills iso27701@grc-skills dora@grc-skills dpdpa@grc-skills cmmc@grc-skills nist-ai-rmf@grc-skills swift-csp@grc-skills ism@grc-skills
 ```
 
 Teams can pre-wire the marketplace in `.claude/settings.json` so every developer gets the skills automatically when they open the project — no manual install required.
@@ -527,13 +557,13 @@ Teams can pre-wire the marketplace in `.claude/settings.json` so every developer
 
 ## Skill Evaluation
 
-These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **75 realistic test cases** were run across all 15 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
+These skills were benchmarked using the [Claude Skill Creator](https://claude.ai) eval framework. **80 realistic test cases** were run across all 16 skills — 5 per framework — covering gap analysis, policy drafting, control deep-dives, edge cases, and compliance advice scenarios. Each test case was evaluated against 5 objectively verifiable assertions by independent grader agents comparing skill-assisted vs. baseline Claude responses.
 
 | Configuration | Pass Rate | Assertions Passed |
 |---------------|-----------|-------------------|
-| **With GRC Skills installed** | **95%** | **355 / 375** |
-| Without skills (baseline Claude) | 81% | 305 / 375 |
-| **Delta** | **+14 points** | **+50 assertions** |
+| **With GRC Skills installed** | **95%** | **379 / 400** |
+| Without skills (baseline Claude) | 80% | 318 / 400 |
+| **Delta** | **+15 points** | **+61 assertions** |
 
 ### Per-Skill Results
 
@@ -554,8 +584,9 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 | CMMC 2.0 | 5 | **100%** | 100% | +0% | Level determination; SPRS scoring; CUI scoping; SSP structure; C3PAO assessment readiness |
 | NIST AI RMF | 5 | **92%** | 76% | +16% | Four functions overview; Hiring AI risk assessment; Credit scoring risk register; EU AI Act mapping; GOVERN gap assessment |
 | SWIFT CSP | 5 | **100%** | 48% | +52% | Architecture scoping (A1/A2/A3/A4/B); MFA hardware token requirement; CSCF v2025 gap assessment; KYC-SA attestation process; Incident response obligations |
+| ISM | 5 | **96%** | 52% | +44% | OS control scoping and authorisation; IRAP assessment preparation; Chapter 13 system hardening; Essential Eight to ISM mapping; Supply chain cloud provider obligations |
 
-Skills add the most measurable value on highly framework-specific tasks: clause-level precision for ISO 27001, CC criteria mapping for SOC 2, exact FedRAMP POA&M timeframes and document names, GDPR article citations, HIPAA regulatory section references, CSF 2.0 subcategory IDs, PCI DSS v4.0.1 requirement numbers, TSA Security Directive citations, ISO 42001 AIMS clause references, DORA Article citations and exact incident reporting timelines (4h/72h/1 month), DPDPA-specific terminology, CMMC practice IDs and SPRS scoring, NIST AI RMF category notation (GV-1 through MG-4.x) and trustworthiness metrics, and SWIFT CSP architecture classification and CSCF v2025 control-specific guidance (patching SLAs, hardware MFA requirements, KYC-SA attestation deadlines).
+Skills add the most measurable value on highly framework-specific tasks: clause-level precision for ISO 27001, CC criteria mapping for SOC 2, exact FedRAMP POA&M timeframes and document names, GDPR article citations, HIPAA regulatory section references, CSF 2.0 subcategory IDs, PCI DSS v4.0.1 requirement numbers, TSA Security Directive citations, ISO 42001 AIMS clause references, DORA Article citations and exact incident reporting timelines (4h/72h/1 month), DPDPA-specific terminology, CMMC practice IDs and SPRS scoring, NIST AI RMF category notation (GV-1 through MG-4.x) and trustworthiness metrics, SWIFT CSP architecture classification and CSCF v2025 control-specific guidance, and ISM applicability marking precision (NC/OS/PROTECTED stacking rules, IRAP artefacts, chapter-level control citations).
 
 📊 **[View the full eval results →](grc-skills-eval-results.html)**
 

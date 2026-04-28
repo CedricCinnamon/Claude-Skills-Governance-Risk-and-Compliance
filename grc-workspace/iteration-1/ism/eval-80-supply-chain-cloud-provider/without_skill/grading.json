@@ -1,0 +1,33 @@
+{
+  "eval_id": 80,
+  "eval_name": "supply-chain-cloud-provider",
+  "configuration": "without_skill",
+  "passed": false,
+  "expectations": [
+    {
+      "text": "Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract",
+      "passed": true,
+      "evidence": "You are not directly subject to the ISM as a non-government entity, but your customer — the agency — is, and it cannot outsource its compliance obligations. This means the agency will contractually require you to meet ISM controls as a condition of providing services."
+    },
+    {
+      "text": "States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply",
+      "passed": false,
+      "evidence": "The response does not reference ISM Chapter 3 (Procurement and Outsourcing) by chapter number at any point. While it discusses procurement and outsourcing concepts implicitly, the specific ISM Chapter 3 requirement is not cited. ASD Cloud Security Guidance is also not named as a distinct document, though the CCSL/CSCP is mentioned."
+    },
+    {
+      "text": "Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)",
+      "passed": false,
+      "evidence": "The response discusses hardening, patch management, logging, network segmentation, and cryptography as control domains but does not map them to specific ISM chapter numbers. No chapter numbers are cited anywhere in the response; controls are presented only by topic name (e.g., 'System Hardening', 'Vulnerability and Patch Management')."
+    },
+    {
+      "text": "Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers",
+      "passed": true,
+      "evidence": "Short answer: Almost certainly yes, if the agency handles PROTECTED or higher classified information on your platform... For PROTECTED data and above: The agency will almost certainly contractually require that your platform undergo an IRAP assessment... IRAP assessments are conducted on systems and platforms regardless of who owns or operates them."
+    },
+    {
+      "text": "Mentions the SSP as a document the cloud provider may need to produce or contribute to",
+      "passed": true,
+      "evidence": "Require you to operate under a System Security Plan (SSP) reviewed and approved by the agency's Chief Information Security Officer (CISO) or equivalent... Prepare your System Security Plan (SSP) — this is the foundational document for any IRAP assessment and for the agency's accreditation decision."
+    }
+  ]
+}

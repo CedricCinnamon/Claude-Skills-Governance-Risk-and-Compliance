@@ -1,0 +1,23 @@
+{
+  "name": "ism",
+  "description": "Expert Australian Information Security Manual (ISM) advisor for Australian government entities, contractors and supply chains. Gap analysis, system authorisation, IRAP preparation, control scoping, and ASD compliance guidance.",
+  "version": "0.6.0",
+  "author": {
+    "name": "Hemant Naik",
+    "email": "hemant.naik@gmail.com"
+  },
+  "homepage": "https://sushegaad.github.io/Claude-Skills-Governance-Risk-and-Compliance/",
+  "repository": "https://github.com/Sushegaad/Claude-Skills-Governance-Risk-and-Compliance",
+  "license": "MIT",
+  "keywords": [
+    "ism",
+    "australian-government",
+    "asd",
+    "irap",
+    "cybersecurity",
+    "compliance",
+    "grc",
+    "protected",
+    "essential-eight"
+  ]
+}

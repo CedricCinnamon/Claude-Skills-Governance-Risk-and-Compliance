@@ -1,0 +1,12 @@
+{
+  "eval_id": 76,
+  "eval_name": "control-scoping-authorisation",
+  "prompt": "We are a federal government agency in Australia running a cloud-hosted case management system that stores OFFICIAL: Sensitive information. We need to understand: which ISM control applicability markings apply to our system, what the key controls we must implement are, and what the authorisation pathway looks like before we can go live.",
+  "assertions": [
+    "States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)",
+    "Mentions the System Security Plan (SSP) as the primary authorisation artefact",
+    "Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor",
+    "Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above",
+    "Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)"
+  ]
+}

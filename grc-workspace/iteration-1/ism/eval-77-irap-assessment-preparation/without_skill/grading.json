@@ -1,0 +1,33 @@
+{
+  "eval_id": 77,
+  "eval_name": "irap-assessment-preparation",
+  "configuration": "without_skill",
+  "passed": false,
+  "expectations": [
+    {
+      "text": "Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts",
+      "passed": false,
+      "evidence": "SSP is listed (item 1), network/security architecture diagrams are listed (item 4), and risk register is listed under 'Risk Management Documentation' (item 3). However, an 'asset register' is not mentioned anywhere in the artefacts list — the response does not include this specific artefact."
+    },
+    {
+      "text": "States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system",
+      "passed": false,
+      "evidence": "The response states 'IRAP assessors are individuals, not organisations. Ensure your assessor holds a current IRAP authorisation from ASD' and notes assessors 'are independent'. However, it does not specifically name the 'ASD IRAP Assessors Register' as the source to verify assessors, and independence from the system being assessed is not explicitly stated."
+    },
+    {
+      "text": "Explains post-assessment pathway: IRAP report → POA&M to address findings → Authorising Official reviews residual risk → ATO sign-off",
+      "passed": true,
+      "evidence": "The post-assessment steps cover: SAR issued → Agency reviews and prepares response including POA&M → 'Authorising Officer reviews the SAR... If the AO is satisfied that residual risks are acceptable, they issue a formal Authority to Operate (ATO)' → remediation tracked through POA&M. All key pathway elements are present."
+    },
+    {
+      "text": "States that re-assessment is required every 24 months or after significant change",
+      "passed": false,
+      "evidence": "The response states authorisations are 'typically valid for a defined period (often two to three years)' and that 'Reassessment if significant architectural or functional changes are made' is required. It does not specify 24 months — it says 'two to three years', which is broader and does not match the specific 24-month requirement."
+    },
+    {
+      "text": "Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level",
+      "passed": false,
+      "evidence": "The response addresses PROTECTED-level requirements in detail but never uses the ISM applicability marking terminology of NC (Not Classified), OS (Official Sensitive), and P (Protected) controls, nor explains the stacking rule that PROTECTED systems must implement all three layers of controls."
+    }
+  ]
+}

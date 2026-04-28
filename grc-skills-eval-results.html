@@ -264,19 +264,19 @@
     <div class="stat-label">With Skill</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value neutral">81%</div>
+    <div class="stat-value neutral">80%</div>
     <div class="stat-label">Baseline (No Skill)</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value positive">+13%</div>
+    <div class="stat-value positive">+15%</div>
     <div class="stat-label">Improvement</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value">375</div>
+    <div class="stat-value">400</div>
     <div class="stat-label">Total Assertions</div>
   </div>
   <div class="stat-card">
-    <div class="stat-value positive">+50</div>
+    <div class="stat-value positive">+61</div>
     <div class="stat-label">Extra Assertions Passed</div>
   </div>
 </div>
@@ -402,6 +402,13 @@
           <td class="stat-cell delta-positive">+56%</td>
           <td class="stat-cell">25/25</td>
         </tr>
+        <tr>
+          <td><a href="#skill-ism" onclick="openSkill('ism'); return false;" class="skill-link">ISM</a></td>
+          <td class="stat-cell">96%</td>
+          <td class="stat-cell">52%</td>
+          <td class="stat-cell delta-positive">+44%</td>
+          <td class="stat-cell">24/25</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -412,7 +419,7 @@
     <ul>
       <li><strong>15 skills</strong> × <strong>5 prompts</strong> = 75 test cases</li>
       <li>Each case run twice (with skill + baseline) = 150 total runs</li>
-      <li>5 assertions per test = <strong>375 total assertion checks</strong></li>
+      <li>5 assertions per test = <strong>400 total assertion checks</strong></li>
       <li>ISO 27701 results reflect the updated skill (iteration 2 after user feedback improvements)</li>
     </ul>
   </div>
@@ -26515,6 +26522,2084 @@ To be compliant with CSCF v2025, your SWIFT-specific incident response plan must
 ---
 
 *This response is based on general knowledge of SWIFT CSCF requirements, SWIFT&#x27;s published security guidance, and standard incident response practices as of CSCF v2025. Always verify against the current SWIFT CSCF documentation and applicable regulatory requirements in your jurisdiction.*
+</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-accordion" id="skill-ism">
+        <button class="skill-toggle" onclick="toggleSkill('ism')">
+          <div class="skill-toggle-left">
+            <span class="skill-toggle-name">ISM</span>
+            <span class="skill-toggle-stats">96% with skill · 52% baseline · <span class="delta-positive">+44%</span></span>
+          </div>
+          <span class="skill-chevron">▼</span>
+        </button>
+        <div class="skill-content" style="display:none">
+          
+          <div class="eval-item" id="eval-ism-0">
+            <button class="eval-toggle" onclick="toggleEval('ism-0')">
+              <span class="eval-label">Test 76: Control Scoping Authorisation</span>
+              <span class="eval-chevron">▼</span>
+            </button>
+            <div class="eval-content" style="display:none">
+              <div class="eval-prompt">
+                <strong>Prompt:</strong> We are a federal government agency in Australia running a cloud-hosted case management system that stores OFFICIAL: Sensitive information. We need to understand: which ISM control applicability markings apply to our system, what the key controls we must implement are, and what the authorisation pathway looks like before we can go live.
+              </div>
+              <div class="eval-outputs">
+                <div class="output-panel">
+                  <div class="output-header with-header">With Skill</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐ 4/5 assertions passed (80%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions the System Security Plan (SSP) as the primary authorisation artefact</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)</span></div></div></div>
+                  <div class="output-text"><pre>ISM Guidance: Cloud-Hosted Case Management System — OFFICIAL: Sensitive
+Australian Federal Government Agency
+Reference: Australian Information Security Manual (ASD, March 2026 edition)
+
+---
+
+1. CONTROL APPLICABILITY MARKINGS FOR YOUR SYSTEM
+
+Your system stores OFFICIAL: Sensitive (OS) information and is therefore classified at the OS level. Under the ISM applicability framework, the following markings apply:
+
+Applicable Markings:
+- NC (Non-Classified): All controls marked NC are mandatory. These represent the universal baseline that every government system must implement, regardless of classification level.
+- OS (OFFICIAL: Sensitive): All controls marked OS are mandatory. These are additional controls specifically required for systems that store, process, or communicate OFFICIAL: Sensitive information.
+
+Markings that do NOT apply to your system:
+- P (PROTECTED): Not required unless your system is upgraded to handle PROTECTED information.
+- S (SECRET): Not applicable.
+- TS (TOP SECRET): Not applicable.
+
+Stacking Rule Applied: As an OS system, your agency must implement NC + OS controls across all relevant guideline chapters. This is the standard baseline for most federal agency systems.
+
+Cloud-hosted context: Because your system is cloud-hosted, Chapter 3 (Procurement and Outsourcing) controls apply with particular weight. Your cloud service provider (CSP) must be assessed for ISM alignment, and all relevant security responsibilities must be documented in a shared responsibility model within your System Security Plan.
+
+---
+
+2. KEY CONTROLS TO IMPLEMENT
+
+The following summarises the key controls across the 22 ISM guideline chapters that apply to your NC + OS system. Controls are grouped by chapter domain.
+
+Chapter 1 — Cyber Security Roles
+- Appoint a CISO with appropriate authority and documented responsibilities.
+- Designate a system owner for the case management system.
+- Define and document security accountability structures.
+
+Chapter 2 — Cyber Security Incidents
+- Establish and document an incident response procedure covering detection, classification, response, and recovery.
+- Define ASD notification obligations for significant incidents.
+- Test incident response procedures and conduct post-incident reviews.
+
+Chapter 3 — Procurement and Outsourcing
+- Assess your cloud service provider (CSP) for ISM compliance and alignment with ASD&#x27;s Cloud Security Guidance.
+- Contractually require the CSP to implement ISM-aligned security controls, including for subcontractors.
+- Document the shared responsibility model — which controls the CSP owns versus your agency.
+- Assess supply chain risks associated with the CSP and any third-party integrations.
+
+Chapter 4 — Cyber Security Documentation
+- Produce and maintain a current System Security Plan (SSP) as the primary authorisation artefact.
+- Maintain a risk register covering identified threats, vulnerabilities, likelihood, impact, and treatment.
+- Document and version-control all security policies; review at least annually.
+
+Chapter 5 — Physical Security
+- If agency personnel access the system from physical premises, secure areas must have controlled access.
+- Clean desk and clear screen policies must be enforced for workstations used to access the system.
+- Note: Physical controls for the cloud hosting infrastructure are the CSP&#x27;s responsibility — document this in the SSP.
+
+Chapter 6 — Personnel Security
+- All personnel with access to the case management system must be screened in accordance with the PSPF and hold appropriate clearances or background checks for OS-level information.
+- Annual security awareness training is mandatory.
+- Access must be revoked promptly upon termination or role change.
+
+Chapter 9 — Enterprise Mobility
+- If the system is accessed via mobile devices, they must be enrolled in an approved Mobile Device Management (MDM) solution.
+- Remote access to the system must use an approved VPN with Multi-Factor Authentication (MFA).
+- BYOD access requires containerisation or equivalent controls.
+
+Chapter 11 — IT Equipment
+- Maintain an asset register for all endpoints and devices used to access the system.
+- Ensure secure disposal of any equipment holding cached or locally stored OS data.
+
+Chapter 12 — Media
+- Control any removable media used in connection with the system.
+- Sanitise or destroy media before disposal.
+
+Chapter 13 — System Hardening (Essential Eight overlap)
+- Harden the operating systems and applications in the cloud environment (remove unnecessary services, disable default accounts).
+- Implement application allow-listing where applicable.
+- Enforce least privilege — no standing administrative access; use privileged access management (PAM).
+- Restrict Microsoft Office macros and apply user application hardening (browsers, PDF readers).
+- Configure Secure Boot and firmware security settings.
+
+Chapter 14 — System Management (Essential Eight overlap)
+- Apply critical patches within 14 days for internet-facing components; within 48 hours for CVSS 9–10 vulnerabilities on internet-facing assets.
+- Apply high-severity patches within 14 days; medium within 30 days.
+- Implement and test regular backups; store backup copies securely and separately (3-2-1 rule).
+- Follow a documented change management process for all system changes.
+
+Chapter 15 — System Monitoring
+- Implement centralised event logging (SIEM or equivalent).
+- Log retention for an OFFICIAL: Sensitive system: minimum 18 months.
+- Logs must be stored in a tamper-evident manner, separate from the monitored system.
+- All privileged access and system changes must be logged.
+- Anomalous events must trigger alerts and investigation.
+
+Chapter 16 — Software Development
+- If the case management system involves custom development, implement a secure Software Development Life Cycle (SDLC).
+- Conduct code reviews and vulnerability testing before deployment.
+- Track and patch third-party dependencies.
+- Implement a vulnerability disclosure policy if the system is externally facing.
+
+Chapter 17 — Database Systems
+- Harden the database (remove default accounts, disable unnecessary features).
+- Encrypt sensitive case data at rest.
+- Apply least privilege to all database access accounts.
+- Log database activity.
+
+Chapter 18 — Email
+- If the system sends email notifications, configure DMARC (reject policy), DKIM, and SPF.
+- Implement email gateway filtering to block malicious attachments and phishing content.
+
+Chapter 19 — Networking
+- Segment the case management system from general-purpose networks.
+- Document and regularly review firewall rule sets.
+- VPNs used for remote access must use TLS 1.2 minimum (TLS 1.3 preferred).
+- Consider DNSSEC for DNS integrity.
+
+Chapter 20 — Cryptography
+- Data in transit must be protected using TLS 1.2 minimum (TLS 1.3 preferred); SSL and TLS 1.0/1.1 are prohibited.
+- Data at rest must be encrypted using AES-128 minimum (AES-256 is best practice for OS).
+- Use SHA-256 minimum for hashing; MD5 and SHA-1 are prohibited.
+- Document key management procedures covering generation, storage, rotation, and destruction.
+
+Chapter 21 — Gateways
+- Implement web content filtering at internet gateways.
+- Regularly assess gateway security.
+
+Chapter 22 — Data Transfers
+- Log all transfers of OFFICIAL: Sensitive data.
+- Label data with its protective marking before transfer.
+- Use approved transfer mechanisms.
+
+Essential Eight — Required Maturity Level
+As a federal government agency in 2026, you are expected to achieve Essential Eight Maturity Level 2 (ML2) as a minimum baseline. This covers:
+1. Application control (allow-listing)
+2. Patch applications
+3. Configure Microsoft Office macros
+4. User application hardening
+5. Restrict administrative privileges
+6. Patch operating systems
+7. Multi-factor authentication (MFA)
+8. Regular backups
+
+ML2 means controls are mostly aligned and address sophisticated threats. Full ML3 is required only for critical infrastructure or high-risk sectors, but is a worthwhile aspiration for a case management system handling sensitive personal information.
+
+---
+
+3. AUTHORISATION PATHWAY BEFORE GO-LIVE
+
+The ISM prescribes a six-step risk management cycle. For your system, the authorisation pathway to achieve an Authorisation to Operate (ATO) before go-live is as follows:
+
+Step 1 — Define the System
+Deliverable: System definition documentation (feeds into the SSP)
+- Define the system boundary: all components in scope (cloud infrastructure, application, database, integrations, endpoints, user access paths).
+- Identify all assets (hardware, software, data flows, third-party services).
+- Confirm the classification level: OFFICIAL: Sensitive.
+- Define security objectives using the CIA triad with High/Medium/Low ratings appropriate to a case management system (likely: Confidentiality = High, Integrity = High, Availability = Medium–High).
+
+Step 2 — Select Controls
+Deliverable: Control selection register (documented in SSP)
+- Apply the NC + OS stacking rule to select applicable ISM controls across all 22 chapters.
+- Tailor controls where needed: document any exclusions with written risk justification.
+- Map the CSP&#x27;s shared responsibility model to determine which controls the CSP satisfies and which remain with your agency.
+
+Step 3 — Implement Controls
+Deliverable: Evidence of control implementation
+- Deploy and configure all selected controls as documented in the SSP.
+- Produce evidence artefacts: configuration screenshots, policy documents, training records, patch reports, backup test results, network diagrams.
+
+Step 4 — Assess Controls (IRAP Assessment)
+Deliverable: IRAP Assessment Report
+- Engage an ASD-registered IRAP assessor who is independent of your agency and the development team. Find assessors at: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+- An IRAP assessment is strongly recommended for OFFICIAL: Sensitive systems and is effectively expected for federal government systems delivering services to citizens.
+- Provide the assessor with the full artefact package:
+  - Current SSP
+  - Network architecture diagrams
+  - Asset register
+  - Risk register
+  - Full policy suite
+  - Evidence of implemented controls
+  - Incident register (last 12 months)
+  - Patch management reports
+  - Plan of Action and Milestones (POA&amp;M) for any outstanding gaps
+- The assessor reviews controls against ISM requirements and produces an IRAP Assessment Report with findings and recommendations.
+
+Step 5 — Authorise the System (ATO)
+Deliverable: Signed Authorisation to Operate (ATO)
+- The Authorising Official (typically the Senior Responsible Officer or delegate with appropriate authority) reviews:
+  - The IRAP Assessment Report
+  - The SSP with all controls documented
+  - The residual risk register
+  - The POA&amp;M for outstanding findings
+- The Authorising Official formally accepts the residual risk and signs the ATO, authorising the system to go live.
+- The ATO must record the authorisation date, the classification level, the system boundary, and the next review date.
+
+Step 6 — Monitor Continuously
+Deliverable: Ongoing monitoring programme
+- Begin continuous control monitoring from go-live: log review, patch monitoring, alerting.
+- Conduct a formal re-assessment every 24 months at minimum.
+- Trigger an out-of-cycle re-assessment after any significant change (major architectural change, new classification level, major new functionality, or significant security incident).
+- Maintain the SSP and risk register as living documents.
+
+---
+
+Summary: Authorisation Timeline
+
+| Phase | Key Deliverable | Who |
+|-------|----------------|-----|
+| 1. Define | System boundary, classification, security objectives | Agency / System Owner |
+| 2. Select | NC + OS control register (in SSP) | Agency / CISO |
+| 3. Implement | Evidence package for all controls | Agency / IT team / CSP |
+| 4. Assess | IRAP Assessment Report | ASD-registered IRAP assessor |
+| 5. Authorise | Signed ATO | Authorising Official |
+| 6. Monitor | Continuous monitoring + 24-month re-assessment | Agency / CISO |
+
+Your system cannot go live without a signed ATO from the Authorising Official. While IRAP assessment is not legally mandatory at OS level, it is strongly recommended by ASD and is standard practice for federal government systems — particularly those handling OFFICIAL: Sensitive case data about individuals.
+
+---
+
+References:
+- ISM (March 2026): https://www.cyber.gov.au/sites/default/files/2026-03/Information%20security%20manual%20(March%202026).pdf
+- IRAP Assessors Register: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+- Essential Eight: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight
+- Essential Eight to ISM Mapping: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping
+</pre></div>
+                </div>
+                <div class="output-panel">
+                  <div class="output-header without-header">Without Skill (Baseline)</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#ef4444;font-weight:600;margin-bottom:8px">⭐ 1/5 assertions passed (20%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">States that an OFFICIAL: Sensitive system must implement both NC and OS applicability-marked controls (stacking rule)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions the System Security Plan (SSP) as the primary authorisation artefact</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Describes the six-step ISM risk management cycle: define, select, implement, assess, authorise, monitor</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Recommends IRAP assessment for OS systems and states it is mandatory for PROTECTED and above</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Covers key control domains including system hardening (Ch. 13), patch management (Ch. 14), system monitoring/logging (Ch. 15), and personnel security (Ch. 6)</span></div></div></div>
+                  <div class="output-text"><pre>ISM Control Applicability, Key Controls, and Authorisation Pathway for a Cloud-Hosted Case Management System Handling OFFICIAL: Sensitive Information
+
+OVERVIEW
+
+This response addresses the requirements for an Australian federal government agency operating a cloud-hosted case management system that processes OFFICIAL: Sensitive information. The applicable framework is the Australian Government Information Security Manual (ISM), published and maintained by the Australian Signals Directorate (ASD). The ISM provides a risk-based, principles-driven approach to cybersecurity, and all controls should be read in conjunction with the current version of the ISM (April 2025 edition as of this writing).
+
+---
+
+PART 1: ISM CONTROL APPLICABILITY MARKINGS
+
+The ISM categorises controls using applicability designations that indicate whether a control must be applied, should be applied, or is optional depending on system context. For a system handling OFFICIAL: Sensitive information, the relevant applicability categories are:
+
+1. MUST (Mandatory Controls)
+These are non-negotiable baseline requirements that apply to all systems, regardless of classification level. They represent the minimum security posture required by the ISM. All OFFICIAL: Sensitive systems must comply with every &quot;must&quot; control.
+
+2. SHOULD (Recommended Controls)
+These are strongly recommended controls. While agencies can choose not to implement them, any deviation must be formally documented, risk-assessed, and accepted by the Authorising Officer (AO). Deviations from &quot;should&quot; controls are a common area of scrutiny during security assessments.
+
+3. SHOULD NOT / MUST NOT
+These are prohibitions. &quot;Must not&quot; controls are absolute prohibitions; &quot;should not&quot; controls are strong discouragements that require formal risk acceptance if deviated from.
+
+4. MAY (Optional Controls)
+These controls are discretionary and context-dependent. Agencies implement them based on their specific threat environment and risk appetite.
+
+For classification-level scoping, the ISM provides a sensitivity/classification matrix. OFFICIAL: Sensitive sits above OFFICIAL (unclassified) but below PROTECTED. This means:
+
+- All baseline controls applicable to OFFICIAL systems apply.
+- Additional controls specifically triggered by the &quot;Sensitive&quot; handling caveat apply, particularly around access control, personnel security, and physical/logical separation.
+- PROTECTED-only controls generally do not apply, unless the system also hosts or connects to PROTECTED information (in which case the system must be assessed at the higher level).
+
+For cloud-hosted systems, ASD&#x27;s Cloud Computing Security for Tenants guidance and the ISM&#x27;s cloud-specific controls are directly applicable. The agency must also consider whether the cloud service provider (CSP) holds an ASD-issued Cloud Services Certification (formerly IRAP-assessed listing on the Hosting Certification Framework / Digital Transformation Agency Certified Cloud Services List).
+
+---
+
+PART 2: KEY CONTROLS TO IMPLEMENT
+
+The following control areas represent the most significant requirements for a cloud-hosted OFFICIAL: Sensitive case management system. Control IDs referenced below are indicative of the ISM control numbering scheme; agencies should verify exact IDs against the current ISM version.
+
+GOVERNANCE AND RISK MANAGEMENT
+
+- Develop and maintain a System Security Plan (SSP) that documents the system&#x27;s security architecture, control implementation, residual risks, and the decisions made by the Authorising Officer.
+- Conduct a formal risk assessment using the agency&#x27;s risk management framework (typically aligned to PSPF and the NIST-derived approach in the ISM).
+- Appoint a System Owner and ensure a qualified Information Security Registered Assessors Program (IRAP) assessor conducts an independent assessment prior to authorisation.
+
+IDENTITY AND ACCESS MANAGEMENT
+
+- Implement multi-factor authentication (MFA) for all users accessing OFFICIAL: Sensitive systems, particularly when accessing over the internet or through cloud infrastructure (ISM control area: &quot;Identifying and Authenticating Personnel&quot;).
+- Apply the principle of least privilege; access must be role-based and reviewed at least annually.
+- Privileged access must be separately managed, logged, and subject to additional controls (e.g., Privileged Access Workstations where operationally feasible).
+- Use identity federation through an agency-managed identity provider (IdP) where possible, rather than relying solely on CSP-native identity services.
+
+SYSTEM HARDENING
+
+- Apply the ASD Essential Eight mitigation strategies as a baseline. For OFFICIAL: Sensitive systems, the minimum target maturity level is Maturity Level Two (ML2) across all eight strategies. The eight strategies are:
+  1. Application Control
+  2. Patch Applications
+  3. Configure Microsoft Office Macro Settings
+  4. User Application Hardening
+  5. Restrict Administrative Privileges
+  6. Patch Operating Systems
+  7. Multi-Factor Authentication
+  8. Regular Backups
+
+- Operating systems, applications, and cloud service configurations must be hardened against the ASD hardening guides and, where applicable, CIS Benchmarks.
+- Disable unnecessary services, ports, and protocols on all system components.
+
+NETWORK SECURITY
+
+- Traffic between end users and the cloud-hosted system must be encrypted in transit using TLS 1.2 or higher (TLS 1.3 preferred).
+- Data at rest must be encrypted using AES-256 or equivalent.
+- Network segmentation must be implemented to isolate the case management system from other workloads.
+- Web application firewalls (WAF) and intrusion detection/prevention systems (IDS/IPS) must be deployed.
+- For internet-facing systems, a gateway with ASD-approved protective DNS filtering should be used.
+
+LOGGING AND MONITORING
+
+- Comprehensive logging must be enabled across all system components, including authentication events, privilege use, data access, and configuration changes.
+- Logs must be retained for a minimum of 18 months (7 years for some records depending on Records Act obligations).
+- A Security Information and Event Management (SIEM) capability or equivalent must be in place to detect and alert on anomalous activity.
+- Logs must be protected from unauthorised deletion or modification.
+
+DATA MANAGEMENT AND HANDLING
+
+- Data must be classified and labelled correctly at all times. Systems must enforce protective markings consistent with the Protective Security Policy Framework (PSPF).
+- Data sovereignty requirements: OFFICIAL: Sensitive data must be stored within Australia unless a formal risk assessment and AO approval permits offshore storage. Most cloud contracts for Australian government data stipulate Australian data residency.
+- Implement Data Loss Prevention (DLP) controls to prevent unauthorised exfiltration.
+
+VULNERABILITY AND PATCH MANAGEMENT
+
+- Critical patches must be applied within 48 hours of release for internet-facing systems; for non-internet-facing components, within two weeks.
+- Conduct regular vulnerability scanning (at least monthly) and penetration testing (at least annually or after significant change).
+
+PERSONNEL SECURITY
+
+- All personnel with access to OFFICIAL: Sensitive systems must hold, at minimum, a Baseline security clearance (or demonstrate an equivalent personnel security check under the PSPF).
+- Third-party vendor and CSP staff with administrative access to the hosting environment should be subject to equivalent or greater vetting requirements.
+
+PHYSICAL AND ENVIRONMENTAL (Cloud Context)
+
+- For cloud-hosted systems, the agency does not directly control physical infrastructure. The CSP must demonstrate compliance with relevant physical security standards. This is assessed as part of the IRAP assessment of the CSP&#x27;s infrastructure.
+- The agency should use only CSP services listed on the ASD Evaluated Products List or assessed through IRAP at the appropriate level.
+
+INCIDENT RESPONSE
+
+- An Incident Response Plan (IRP) must be developed, tested, and maintained.
+- Security incidents must be reported to ASD via the ASD Cyber Incident Reporting Portal in accordance with mandatory reporting thresholds.
+- Business Continuity and Disaster Recovery plans must account for cloud-specific failure scenarios (e.g., availability zone outages, CSP service disruptions).
+
+---
+
+PART 3: AUTHORISATION PATHWAY
+
+The ISM prescribes a formal security authorisation process before a system can be approved to handle protectively marked information. The authorisation process for OFFICIAL: Sensitive systems follows these key stages:
+
+STAGE 1: SYSTEM CATEGORISATION AND SCOPING
+
+- Define the system boundary, including all components (application, database, APIs, network, identity services, third-party integrations).
+- Confirm the highest classification of data the system will process or store. If any OFFICIAL: Sensitive data will be handled, the entire system is assessed at that level.
+- Identify applicable threat actors (from ASD&#x27;s Cyber Threat Intelligence) and business impact levels.
+
+STAGE 2: SECURITY DOCUMENTATION DEVELOPMENT
+
+Develop the following core artefacts:
+
+- System Security Plan (SSP): Describes the system, its security architecture, threat model, control implementation status, and residual risks.
+- Standard Operating Procedures (SOPs): Operational security procedures for administrators and users.
+- Incident Response Plan (IRP): How the agency will detect, respond to, and recover from security incidents.
+- Business Continuity Plan (BCP) / Disaster Recovery Plan (DRP).
+- Risk Assessment Report: Formal documentation of threats, vulnerabilities, likelihood, impact, and treatment decisions.
+
+STAGE 3: IRAP ASSESSMENT
+
+- Engage an IRAP assessor (an individual assessed and endorsed by ASD to conduct security assessments of Australian government systems).
+- The IRAP assessor conducts an independent review of the SSP, system architecture, control implementation evidence, and risk posture.
+- The assessment produces a Security Assessment Report (SAR) that identifies control gaps, residual risks, and recommendations.
+- The IRAP assessment is not an approval — it is an independent expert opinion provided to the Authorising Officer.
+- For cloud-hosted systems, the IRAP assessment should include a review of the CSP&#x27;s IRAP assessment for the relevant services (tenants can leverage CSP IRAP reports to reduce duplication, but must also assess the tenant-side controls they are responsible for).
+
+STAGE 4: RISK TREATMENT AND REMEDIATION
+
+- Address critical and high findings from the IRAP assessment prior to authorisation where possible.
+- Document accepted residual risks with formal risk acceptance decisions by the appropriate risk owner.
+- Any risks that exceed the agency&#x27;s risk appetite must be escalated to the Authorising Officer with full context.
+
+STAGE 5: AUTHORISATION DECISION
+
+- The Authorising Officer (AO) — typically a Senior Executive Service (SES) officer or equivalent, who is accountable for the system — reviews the SAR, SSP, risk register, and all risk acceptance decisions.
+- The AO makes an informed risk-based decision to either:
+  (a) Grant an Authority to Operate (ATO) — unconditional approval to go live, or
+  (b) Grant a conditional ATO with specific remediation conditions that must be met within a defined timeframe, or
+  (c) Decline authorisation and require further remediation before re-assessment.
+- The ATO is time-limited. ISM guidance indicates systems should be reassessed periodically (typically every two years, or following significant change).
+- The AO accepts personal accountability for the residual risks of the system in its current state.
+
+STAGE 6: CONTINUOUS MONITORING AND REAUTHORISATION
+
+- Post-go-live, the agency must maintain a continuous monitoring program to detect changes to the risk posture (e.g., new vulnerabilities, configuration drift, new threat intelligence).
+- Significant changes to the system (new integrations, changes to data flows, major version upgrades) may trigger a requirement to re-engage IRAP and seek a new or updated ATO.
+- Annual reviews of the SSP and risk register are standard practice.
+- The ATO must be reviewed and reissued at least every two years, or earlier if warranted by material changes or incidents.
+
+---
+
+SUMMARY TABLE
+
+| Area | Requirement |
+|---|---|
+| Applicable classification | OFFICIAL: Sensitive (above OFFICIAL, below PROTECTED) |
+| Essential Eight target | Maturity Level 2 (minimum) |
+| MFA | Required for all users |
+| Encryption at rest | AES-256 or equivalent |
+| Encryption in transit | TLS 1.2+ (TLS 1.3 preferred) |
+| Data residency | Australia (default; exceptions require AO approval) |
+| Personnel security | Baseline clearance minimum |
+| CSP assessment | IRAP-assessed CSP services required |
+| Authorisation type | Authority to Operate (ATO) issued by Authorising Officer |
+| Independent assessment | IRAP assessor required prior to ATO |
+| ATO validity | Up to 2 years; triggers reauthorisation on significant change |
+| Incident reporting | Mandatory reporting to ASD |
+
+---
+
+REFERENCES AND FURTHER READING
+
+- Australian Government Information Security Manual (ISM) — Australian Signals Directorate: https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism
+- Protective Security Policy Framework (PSPF) — Attorney-General&#x27;s Department: https://www.protectivesecurity.gov.au
+- ASD Essential Eight Maturity Model: https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight
+- IRAP Assessors List: https://www.cyber.gov.au/about-us/irap
+- Cloud Computing Security for Tenants (ASD): https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/cloud-computing-security
+- ASD Certified Cloud Services: https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/cloud-computing-security/cloud-services-certification
+</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eval-item" id="eval-ism-1">
+            <button class="eval-toggle" onclick="toggleEval('ism-1')">
+              <span class="eval-label">Test 77: Irap Assessment Preparation</span>
+              <span class="eval-chevron">▼</span>
+            </button>
+            <div class="eval-content" style="display:none">
+              <div class="eval-prompt">
+                <strong>Prompt:</strong> Our agency is preparing for an IRAP assessment of our PROTECTED-level system next quarter. What artefacts do we need to prepare, what should we expect during the assessment, and what happens after the IRAP report is issued? We have not had an IRAP assessment before.
+              </div>
+              <div class="eval-outputs">
+                <div class="output-panel">
+                  <div class="output-header with-header">With Skill</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains post-assessment pathway: IRAP report → POA&amp;M to address findings → Authorising Official reviews residual risk → ATO sign-off</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States that re-assessment is required every 24 months or after significant change</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level</span></div></div></div>
+                  <div class="output-text"><pre># IRAP Assessment Preparation for a PROTECTED-Level System
+
+This guidance covers the three areas you have asked about: artefacts to prepare, what to expect during the assessment, and what happens after the IRAP report is issued. It is based on the Australian Information Security Manual (ASD, March 2026 edition).
+
+---
+
+## 1. Artefacts to Prepare
+
+Because your system handles PROTECTED-level information, an IRAP assessment is mandatory before the system can be formally authorised to operate. Your assessor will need a complete documentary package. Prepare the following before the assessment begins.
+
+### Core Artefacts
+
+**System Security Plan (SSP)**
+This is the primary authorisation document and the centrepiece of your IRAP submission. It must contain:
+- System name, owner, purpose, and operating environment
+- System boundary — all in-scope hardware, software, and interfaces
+- Classification level (PROTECTED)
+- Security objectives — Confidentiality, Integrity, and Availability ratings
+- All applicable ISM controls with justification for inclusion (for a PROTECTED system: NC + OS + P controls across all 22 guideline chapters)
+- Evidence of implemented controls for each applicable control
+- Excluded controls with documented risk acceptance and justification
+- A current risk register
+- Review schedule (minimum every 24 months or after significant change)
+
+**Network Architecture Diagrams**
+Current, accurate diagrams showing system boundaries, network zones, segmentation, interconnections, and classification boundaries. These must align with what is described in the SSP.
+
+**Asset Register**
+A complete register of all hardware and software assets within the system boundary. This underpins controls across Chapter 11 (IT Equipment), Chapter 12 (Media), and Chapter 13 (System Hardening).
+
+**Risk Register**
+A current risk register documenting identified threats, vulnerabilities, likelihood, impact ratings, and treatment decisions. Residual risks must be explicitly recorded.
+
+**Policy Suite**
+All security policies referenced in the SSP must exist and be current. Key policies for a PROTECTED system include:
+- Access control policy
+- Patch management policy and procedures
+- Incident response plan
+- Change management plan
+- Business continuity and disaster recovery plan
+- Media handling and sanitisation procedures
+- Physical security procedures
+- Acceptable use policy
+- Cryptography and key management procedures
+- Backup and recovery procedures
+
+**Evidence of Implemented Controls**
+For each control recorded as implemented in the SSP, you need supporting evidence. This typically includes configuration screenshots, hardening checklists, system-generated reports, training records, and test results. The assessor will sample and test this evidence.
+
+**Incident Register (last 12 months)**
+A log of cyber security incidents or near-misses. If you have no incidents to record, document that explicitly.
+
+**Patch Management Reports**
+Evidence that patches are being applied within ISM timeframes:
+- Critical patches (CVSS 9–10): within 48 hours for internet-facing systems; 14 days for internal
+- High patches (CVSS 7–8.9): within 14 days
+- Medium patches (CVSS 4–6.9): within 30 days
+
+**Essential Eight Evidence**
+For a PROTECTED system, the assessor will also examine your Essential Eight implementation. Prepare evidence for each of the eight strategies: application control (allow-listing), patch applications, Microsoft Office macro controls, user application hardening, restriction of administrative privileges, patch operating systems, multi-factor authentication, and regular backups. ASD&#x27;s 2026 recommended baseline for government entities is Maturity Level 2.
+
+**Note on Previous Assessments**
+As this is your first IRAP assessment, you will not have a previous IRAP report or Plan of Action and Milestones (POA&amp;M). That is normal. The assessor will note this is an initial assessment.
+
+---
+
+## 2. What to Expect During the Assessment
+
+### Engaging an IRAP Assessor
+Before anything else, you must engage an assessor who is currently listed on the ASD IRAP Assessors Register. The assessor must be independent of your organisation and the system being assessed. You can find current assessors at:
+https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+
+### Scoping and Planning Phase
+The assessor will work with you to confirm the system boundary and assessment scope. This includes agreeing which ISM controls are in scope, the assessment methodology, and the schedule. For a PROTECTED system the scope covers all NC, OS, and P controls across all 22 ISM guideline chapters relevant to your system&#x27;s architecture.
+
+### Document Review
+The assessor will conduct a detailed review of all artefacts listed above. They will check that your SSP accurately reflects the system, that controls are documented with sufficient evidence, and that policies are current and approved. Gaps identified at this stage will be noted and may prompt requests for additional information.
+
+### Technical Testing and Interviews
+The assessor will conduct technical testing of the implemented controls. This typically includes:
+- Configuration reviews (OS hardening, application hardening, firewall rules, cryptographic settings)
+- Review of network architecture and segmentation against diagrams
+- Sampling of patch management and change management records
+- Testing of logging and monitoring capability (Chapter 15 — log retention of 18 months minimum for PROTECTED systems)
+- Review of cryptographic implementations (AES-256 for PROTECTED data, SHA-384 minimum for hashing, TLS 1.2 minimum with TLS 1.3 preferred)
+- Interviews with system administrators, the CISO, and key security personnel
+
+### Findings Classification
+The assessor will classify findings into categories (typically: satisfactory, minor finding, major finding, or significant risk). Findings represent controls that are not implemented, partially implemented, or implemented without adequate evidence.
+
+### Draft Report Review
+Before the final report is issued, you will normally be given an opportunity to review the draft IRAP Assessment Report and respond to findings. This is the appropriate time to provide any additional evidence or clarify misunderstandings. It is not the time to remediate major gaps — substantive remediation must happen before the assessment or will be recorded as outstanding findings.
+
+---
+
+## 3. What Happens After the IRAP Report is Issued
+
+### IRAP Assessment Report
+The assessor issues a formal IRAP Assessment Report documenting:
+- Assessment scope and methodology
+- All findings (satisfactory and non-compliant)
+- Risk ratings for each finding
+- Recommendations for remediation
+
+This report is provided to your agency and is the primary input to the authorisation decision.
+
+### Plan of Action and Milestones (POA&amp;M)
+Your agency must produce a POA&amp;M addressing each finding in the IRAP report. The POA&amp;M documents:
+- Each finding and its risk rating
+- The remediation action planned
+- The responsible owner
+- The target remediation date
+
+The POA&amp;M is a living document and must be maintained and updated as findings are closed.
+
+### Authorisation to Operate (ATO)
+Your Authorising Official (typically the agency head, CIO, or a delegate with appropriate authority) reviews the IRAP Assessment Report, the POA&amp;M, and the residual risk profile. The Authorising Official makes a risk-based decision to:
+- Grant an Authorisation to Operate — accepting residual risk and authorising the system for use
+- Grant a conditional or time-limited ATO — with conditions tied to POA&amp;M milestones
+- Decline to authorise — if residual risk is unacceptable
+
+The ATO is a formal sign-off that is recorded in the SSP.
+
+### Ongoing Monitoring
+After authorisation, your agency must:
+- Maintain continuous monitoring of controls (Chapter 15)
+- Apply patches within required timeframes (Chapter 14)
+- Review and update the SSP at least every 24 months or after significant change
+- Report cyber security incidents to ASD as required (Chapter 2)
+- Conduct a re-assessment (new IRAP assessment) every 24 months minimum, or sooner if there is a significant architectural change, a change in classification level, or major new functionality is added
+
+### Re-assessment Triggers
+The following events require a new IRAP assessment regardless of timing:
+- A major change to the system architecture or boundary
+- A change in the classification level of information handled
+- Addition of major new functionality or new interconnections with other systems
+
+---
+
+## Summary Checklist — Pre-Assessment Preparation
+
+| Artefact | Owner | Status to Confirm |
+|----------|-------|------------------|
+| System Security Plan (SSP) — complete and current | System Owner / CISO | All sections complete, Authorising Official identified |
+| Network architecture diagrams | IT/Architecture | Current, accurate, aligned to SSP |
+| Asset register | IT | All in-scope hardware and software recorded |
+| Risk register | CISO | Current risk ratings, treatments documented |
+| Policy suite | CISO | All policies approved, version-controlled, within review cycle |
+| Control evidence package | System Owner | Evidence for all implemented NC + OS + P controls |
+| Incident register | CISO | Last 12 months documented |
+| Patch management reports | IT | Reports showing compliance with ISM patch SLAs |
+| Essential Eight evidence | IT / CISO | Evidence for all eight strategies at target maturity level |
+| IRAP assessor engaged | CISO | Assessor confirmed on ASD IRAP register; independence confirmed |
+
+---
+
+## Key ISM References
+
+- Chapter 4 — Cyber Security Documentation (SSP and policy requirements)
+- Chapter 6 — Personnel Security (clearances, awareness training)
+- Chapter 13 — System Hardening (OS, application, firmware hardening; Essential Eight)
+- Chapter 14 — System Management (patch management, change management, backups)
+- Chapter 15 — System Monitoring (logging; 18-month retention for PROTECTED systems)
+- Chapter 19 — Networking (network segmentation, firewall rules)
+- Chapter 20 — Cryptography (AES-256, SHA-384, TLS 1.2/1.3 for PROTECTED)
+- ISM IRAP Assessors Register: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+- ISM (March 2026): https://www.cyber.gov.au/sites/default/files/2026-03/Information%20security%20manual%20(March%202026).pdf
+</pre></div>
+                </div>
+                <div class="output-panel">
+                  <div class="output-header without-header">Without Skill (Baseline)</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#ef4444;font-weight:600;margin-bottom:8px">⭐ 1/5 assertions passed (20%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Lists SSP, network architecture diagrams, asset register, and risk register as required IRAP artefacts</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">States IRAP assessors must be listed on the ASD IRAP Assessors Register and be independent of the system</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains post-assessment pathway: IRAP report → POA&amp;M to address findings → Authorising Official reviews residual risk → ATO sign-off</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">States that re-assessment is required every 24 months or after significant change</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Mentions that PROTECTED systems must implement NC + OS + P controls and that the IRAP scope covers all applicable controls for the classification level</span></div></div></div>
+                  <div class="output-text"><pre>Preparing for an IRAP Assessment of a PROTECTED-Level System
+
+The Information Security Registered Assessors Program (IRAP) is an Australian Signals Directorate (ASD) initiative that authorises qualified assessors to evaluate the security posture of systems against the requirements of the Australian Government Information Security Manual (ISM). For a PROTECTED-level system, the stakes and documentation requirements are significant. The following covers what artefacts to prepare, what to expect during the assessment, and the post-assessment process.
+
+
+ARTEFACTS TO PREPARE BEFORE THE ASSESSMENT
+
+1. System Security Plan (SSP)
+The SSP is the central document for any IRAP assessment. It must describe:
+- The system&#x27;s purpose, boundaries, and architecture
+- All data flows, including ingress, egress, and inter-component flows
+- The classification and handling requirements for the information processed (PROTECTED in your case)
+- All hardware, software, and network components in scope
+- How ISM controls are addressed, including any controls not applied and the justification for each exception
+- Roles and responsibilities for system security
+
+2. Statement of Applicability (SoA)
+A control-by-control mapping against the ISM, identifying which controls apply to the system, which are implemented, and which are not applicable (with rationale). For a PROTECTED system, this will include a broad range of controls across topics such as access control, cryptography, patch management, logging, and personnel security.
+
+3. Risk Management Documentation
+- A formal risk assessment conducted in accordance with the agency&#x27;s risk management framework (typically aligned to NIST SP 800-30 or equivalent)
+- A risk register capturing identified threats, vulnerabilities, likelihood, consequence, and residual risk ratings
+- A risk treatment plan or Plan of Action and Milestones (POA&amp;M) documenting how identified risks will be addressed
+
+4. Security Architecture and Network Diagrams
+Detailed diagrams showing:
+- System topology and network segmentation
+- Data classification zones and boundary protections
+- External connections, gateways, and any cross-domain solutions
+- Cloud service usage and relevant shared responsibility boundaries
+
+5. Standard Operating Procedures (SOPs) and Security Policies
+Relevant operational documentation the assessor will review, including:
+- Access control procedures (including privileged access management)
+- Incident response plan
+- Patch management procedures
+- Change management process
+- Backup and recovery procedures
+- Media handling and disposal procedures
+- Personnel security procedures
+
+6. Evidence of Control Implementation
+Actual evidence that stated controls are in place, such as:
+- Configuration baselines and hardening guides (aligned to ASD&#x27;s Hardening Guides where applicable)
+- Vulnerability scan results and penetration test reports
+- Audit and log management evidence
+- Training records for personnel with system access
+- Certificates or configurations for encryption at rest and in transit
+
+7. Previous Assessment Reports and Remediation Evidence
+If any prior security reviews, penetration tests, or internal audits have been conducted, gather these along with evidence of remediation for any findings.
+
+8. Data Classification and Information Management Documentation
+Documentation showing how PROTECTED information is classified, labelled, handled, stored, transmitted, and disposed of in accordance with the Protective Security Policy Framework (PSPF).
+
+9. Authorising Officer (AO) Engagement Records
+Evidence that the relevant Authorising Officer has been engaged in the risk acceptance process. The AO is ultimately responsible for accepting residual risk and authorising the system to operate.
+
+10. Third-Party and Supply Chain Agreements
+Any contracts, Memoranda of Understanding (MoUs), or cloud service agreements relevant to the system&#x27;s security, including any ASD-certified cloud services used and their certification documentation.
+
+
+WHAT TO EXPECT DURING THE IRAP ASSESSMENT
+
+An IRAP assessment typically involves three main phases:
+
+Phase 1: Documentation Review (Desk-Based Review)
+The assessor reviews all submitted documentation against ISM requirements. This is largely a paper-based exercise. You should expect:
+- Requests for additional or clarifying documentation
+- Preliminary identification of potential gaps or non-conformances
+- Questions about architectural decisions and risk acceptance rationale
+
+This phase can take several weeks depending on the complexity of the system and the completeness of the documentation provided. Incomplete documentation is a common cause of delays.
+
+Phase 2: Technical Testing and Interviews
+The assessor will validate that documented controls are actually implemented. This includes:
+- Interviews with system administrators, security staff, and other key personnel
+- Inspection of live system configurations (firewall rules, access control lists, audit logging settings, etc.)
+- Review of vulnerability scan results or conducting their own scanning
+- Verification of cryptographic implementations
+- Spot-checks on patch currency and hardening
+
+For a PROTECTED system, the assessor will pay particular attention to boundary controls, access management for privileged users, handling of credentials, logging and monitoring completeness, and any connections to external or lower-classification environments.
+
+Phase 3: Reporting and Findings Discussion
+After testing, the assessor will:
+- Document all findings, categorised by risk rating (typically High, Medium, Low, or Informational)
+- Brief the agency on preliminary findings before the final report is issued
+- Allow the agency to respond to factual inaccuracies before finalisation
+
+Assessors are independent and cannot advise on how to remediate findings during the assessment itself, as this would compromise their independence.
+
+Things to Expect Generally
+- The assessment duration for a PROTECTED system is typically 4 to 12 weeks depending on system complexity, scope, and documentation readiness.
+- Active cooperation is required — designate a point of contact and ensure relevant technical staff are available for interview.
+- The assessor works to the current version of the ISM (updated monthly by ASD), so confirm you are referencing the correct version.
+- IRAP assessors are individuals, not organisations. Ensure your assessor holds a current IRAP authorisation from ASD.
+
+
+AFTER THE IRAP REPORT IS ISSUED
+
+The IRAP assessor produces a formal assessment report, commonly called an IRAP Security Assessment Report (SAR). This document presents:
+- An overall assessment of the system&#x27;s security posture
+- Findings and residual risks rated by severity
+- Recommendations for remediation
+- The assessor&#x27;s professional opinion on whether the system is suitable for operation at the assessed classification level
+
+Step 1: Agency Review of the Report
+The agency (system owner) reviews the SAR and prepares a formal response. This typically involves:
+- Acknowledging each finding
+- Documenting planned remediation actions and timelines
+- Seeking risk acceptance from the Authorising Officer for any residual risks that will not be immediately remediated
+
+Step 2: Authorising Officer Risk Acceptance
+The Authorising Officer reviews the SAR and the agency&#x27;s response. If the AO is satisfied that residual risks are acceptable, they issue a formal Authority to Operate (ATO) or equivalent authorisation. This is not automatic — the AO may require certain High findings to be remediated before authorisation is granted.
+
+Step 3: Remediation of Findings
+For findings that are not accepted as residual risk, the agency must implement remediation and track progress through the risk register or POA&amp;M. Some agencies agree with their AO to operate with a time-limited authorisation pending completion of remediation.
+
+Step 4: Submission to ASD (if applicable)
+For some systems, particularly those used in Commonwealth agencies or where ASD accreditation is required, the SAR and associated documentation may need to be submitted to ASD for review. ASD may provide additional feedback or requirements. Confirm with your agency&#x27;s Chief Information Security Officer (CISO) whether formal ASD submission is required in your case.
+
+Step 5: Ongoing Assurance
+IRAP assessment is not a one-time event. Authorisations are typically valid for a defined period (often two to three years) or until significant changes occur. Ongoing obligations include:
+- Continuous monitoring of security controls
+- Reassessment if significant architectural or functional changes are made to the system
+- Annual review of the risk register and SSP currency
+- Maintaining an Evidence of Compliance file to support future assessments
+- Reporting significant security incidents to ASD and the agency&#x27;s CISO
+
+Step 6: Plan for Reassessment
+Document lessons learned from the first assessment and begin maintaining the SSP and evidence artefacts as living documents. This significantly reduces effort for future assessments.
+
+
+KEY TIPS FOR FIRST-TIME IRAP ASSESSMENT
+
+- Engage the assessor early, ideally 6 to 8 weeks before assessment commencement, to agree on scope, methodology, and documentation requirements.
+- Do not wait until the last moment to compile documentation. Gaps in documentation are one of the most common causes of findings and delays.
+- Conduct an internal pre-assessment or gap analysis against the ISM before the formal IRAP begins. This allows time to address obvious gaps.
+- Ensure your SSP is current and accurately reflects the system as it exists — not as it was designed or as you intend it to be.
+- Brief your Authorising Officer well in advance so they understand their role and the likely risk acceptance decisions they will need to make.
+- The ISM is the primary benchmark. Supplementary guidance such as ASD&#x27;s Essential Eight and Hardening Guides are relevant but the ISM controls are the formal assessment basis.
+</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eval-item" id="eval-ism-2">
+            <button class="eval-toggle" onclick="toggleEval('ism-2')">
+              <span class="eval-label">Test 78: System Hardening Chapter13</span>
+              <span class="eval-chevron">▼</span>
+            </button>
+            <div class="eval-content" style="display:none">
+              <div class="eval-prompt">
+                <strong>Prompt:</strong> We are a state government IT team responsible for hardening a new Windows Server 2022 deployment. Walk us through what the ISM Chapter 13 (System Hardening) requires and what evidence we need to collect to demonstrate compliance during an assessment.
+              </div>
+              <div class="eval-outputs">
+                <div class="output-panel">
+                  <div class="output-header with-header">With Skill</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">References ISM Chapter 13 (System Hardening) as the relevant guideline</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions application allow-listing as a key ISM/Essential Eight control</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy</span></div></div></div>
+                  <div class="output-text"><pre># ISM Chapter 13 — System Hardening: Requirements and Evidence for Windows Server 2022
+
+Source: Australian Information Security Manual (ASD), March 2026 edition
+Assumed classification: OFFICIAL: Sensitive (OS) — the default baseline for state government systems handling sensitive information. If your deployment handles PROTECTED information, all NC + OS + P controls apply and additional controls are required beyond what is listed here.
+
+---
+
+## Overview of Chapter 13 — System Hardening
+
+Chapter 13 sits within the Protect function of the ISM framework. Its purpose is to ensure that operating systems, applications, and firmware are configured securely before deployment and maintained in a hardened state throughout the system lifecycle. For Windows Server 2022, this translates into a set of concrete technical actions covering the OS baseline, application controls, firmware, and privileged access management.
+
+Chapter 13 also underpins four of the eight Essential Eight mitigation strategies: application control (allow-listing), configuring Microsoft Office macros, user application hardening, and restricting administrative privileges. This means that Chapter 13 compliance is closely tied to your Essential Eight Maturity Level reporting obligations.
+
+---
+
+## What Chapter 13 Requires
+
+### 1. Operating System Hardening
+
+The ISM requires that operating systems be hardened before deployment. This means removing or disabling everything that is not needed for the system&#x27;s defined purpose.
+
+For Windows Server 2022 specifically, the following actions are required:
+
+- Remove all Windows roles, role services, and features that are not required for the server&#x27;s purpose. Every unnecessary component is an attack surface.
+- Disable all default and built-in accounts that are not needed. The built-in local Administrator account must be renamed and its use restricted; the Guest account must be disabled.
+- Apply the ASD hardening guidance for Windows Server. ASD publishes a dedicated hardening guide (Hardening Microsoft Windows Server) that specifies required Group Policy settings. Your configuration must align with that guide.
+- Enforce screen lock and session timeout policies.
+- Configure Windows Defender and ensure real-time protection is active unless a compensating security product is formally documented.
+- Disable unnecessary network services and protocols (for example, SMBv1, NetBIOS over TCP/IP where not required, LLMNR, mDNS).
+- Apply a host-based firewall policy that blocks all inbound traffic not explicitly required.
+
+### 2. Application Hardening
+
+Applications installed on the server must also be hardened:
+
+- Disable or remove features within applications that are not required for the server&#x27;s function.
+- Apply vendor-supplied hardening guides for all installed server software (IIS, SQL Server, .NET, etc.).
+- Uninstall or disable software that is not required — this includes browser software unless operationally justified.
+- Where Microsoft Office is installed, macro execution must be restricted. At a minimum, macros must be blocked from the internet and only macros from trusted publishers or trusted locations may run. This directly maps to the Essential Eight &quot;Configure Microsoft Office macros&quot; strategy.
+
+### 3. Application Control (Allow-Listing)
+
+This is one of the highest-priority Chapter 13 controls and maps directly to the Essential Eight &quot;Application control&quot; strategy.
+
+- An application allow-list must be implemented to prevent execution of unapproved or unknown executables, software libraries, scripts, and installers.
+- On Windows Server 2022, this is implemented via Windows Defender Application Control (WDAC) or AppLocker, with WDAC being ASD&#x27;s preferred solution.
+- The allow-list must cover all user-accessible execution paths. At Essential Eight ML2 (the ASD-recommended baseline for government), the allow-list must prevent execution of malicious code in standard user profiles and temporary directories.
+- At ML3, the allow-list must be enforced using a combination of publisher certificate rules and file hash rules and must cover all execution paths including scripts and interpreted code.
+
+### 4. Firmware Security
+
+The ISM requires that firmware-level security settings be configured before deployment:
+
+- Secure Boot must be enabled. Windows Server 2022 supports Secure Boot; it must be active and the firmware must be configured to prevent disabling it from the OS.
+- A strong BIOS/UEFI password must be set to prevent unauthorised firmware modifications.
+- Boot order must be restricted so that the server can only boot from the authorised system drive.
+- Where available, TPM 2.0 should be enabled and used to support measured boot and attestation.
+- Firmware must be kept current — out-of-date firmware with known vulnerabilities is treated as a hardening gap.
+
+### 5. Least Privilege and Privileged Access Management
+
+This is a core ISM requirement that runs throughout Chapter 13 and connects to Chapter 6 (Personnel Security).
+
+- No standing administrative access. Standard user accounts must be used for day-to-day operations; administrative credentials must only be used when performing administrative tasks.
+- Separate administrative accounts must be created for each administrator — shared administrator accounts are not permitted.
+- Domain Administrator and Enterprise Administrator accounts must be tightly controlled; their use must be logged and reviewed.
+- Local administrator accounts on servers must be managed. Microsoft LAPS (Local Administrator Password Solution) or equivalent must be used to ensure unique, rotated local admin passwords across all servers.
+- Privileged Access Workstations (PAWs) are strongly recommended for performing administrative tasks on servers handling OS-classified information.
+- Just-In-Time (JIT) access is the preferred model — administrative rights should be granted only when needed and revoked after use.
+- Remote Desktop Protocol (RDP) access must be restricted to authorised IP ranges, use Network Level Authentication (NLA), and require MFA for privileged accounts.
+
+### 6. User Application Hardening
+
+Where end-user applications are present on the server (this is less common for server deployments but applies to jump servers or terminal server deployments):
+
+- Web browsers must be hardened: Flash, Java plugins, and unsupported extensions must be disabled or removed; automatic execution of web-delivered content must be blocked.
+- PDF viewers must be configured to block internet connections and disable JavaScript execution within documents.
+- Microsoft Office must be configured per ASD&#x27;s hardening guide, including disabling OLE package activation.
+
+---
+
+## Control Applicability for Your Deployment
+
+Your Windows Server 2022 deployment is assumed to be an OFFICIAL: Sensitive (OS) system. This means you must implement all NC-marked and OS-marked controls from Chapter 13. The table below maps the key Chapter 13 control areas to their applicability:
+
+| Control Area | Applicability | Notes |
+|---|---|---|
+| OS hardening (remove unnecessary services, disable default accounts) | NC | Applies to all government systems |
+| Application allow-listing | NC / OS | Essential Eight strategy; required at ML2 for OS systems |
+| Firmware security (Secure Boot, BIOS password) | NC | Applies to all government systems |
+| Least privilege enforcement | NC / OS | No standing admin access; separate admin accounts |
+| Local admin password management (LAPS) | NC / OS | Required for all managed endpoints and servers |
+| Application hardening (disable unused features) | NC | Applies to all installed software |
+| Microsoft Office macro restrictions | NC / OS | Essential Eight strategy |
+| Browser and PDF hardening | NC / OS | Essential Eight &quot;User application hardening&quot; |
+
+If your system is reclassified to PROTECTED, additional P-marked controls apply, including stricter controls on privileged access, evaluated cryptographic products, and mandatory IRAP assessment.
+
+---
+
+## Evidence Required for Compliance Assessment
+
+An assessor evaluating your Chapter 13 compliance — whether during an internal review, IRAP assessment, or government audit — will look for documented evidence that each control is implemented. Below is a structured evidence checklist.
+
+### OS Hardening Evidence
+
+| Evidence Item | Description |
+|---|---|
+| Group Policy export or baseline configuration report | Demonstrates applied hardening settings, aligned with ASD&#x27;s Windows Server 2022 hardening guide |
+| Roles and features inventory | Shows only required Windows roles and features are installed (e.g., output of `Get-WindowsFeature` filtered to installed items) |
+| Disabled accounts listing | Shows Guest and default accounts are disabled; local Administrator is renamed |
+| Host-based firewall rule set | Documents all allowed inbound/outbound rules and confirms default-deny posture |
+| Network protocol configuration | Evidence that SMBv1, LLMNR, NetBIOS over TCP/IP are disabled where not required |
+| ASD Windows Server Hardening Guide gap comparison | A completed checklist showing alignment with ASD&#x27;s published hardening benchmark |
+
+### Application Control Evidence
+
+| Evidence Item | Description |
+|---|---|
+| WDAC or AppLocker policy export | The implemented application control policy in XML or readable format |
+| Block event log samples | Windows event log entries (Event ID 3076/3077 for WDAC in audit mode; 8003/8004 for AppLocker) demonstrating the policy is active |
+| Policy scope documentation | Confirms the allow-list covers all execution paths (executables, scripts, libraries, installers) |
+| User acceptance testing (UAT) record | Confirms the allow-list does not block legitimate business applications |
+
+### Firmware Security Evidence
+
+| Evidence Item | Description |
+|---|---|
+| BIOS/UEFI configuration screenshots | Shows Secure Boot enabled, boot order locked, BIOS password set |
+| System Information report | `msinfo32` or `Get-ComputerInfo` output confirming Secure Boot state and TPM presence |
+| Firmware version record | Current firmware version against vendor&#x27;s latest release, confirming firmware is up to date |
+
+### Least Privilege and Privileged Access Management Evidence
+
+| Evidence Item | Description |
+|---|---|
+| Active Directory group membership reports | Lists of users in privileged groups (Domain Admins, Server Operators, Backup Operators, local Administrators) |
+| Separate admin account documentation | Evidence that all admins have a separate privileged account distinct from their standard account |
+| LAPS deployment confirmation | Evidence LAPS is deployed, local admin accounts are managed, and password rotation is occurring |
+| Privileged Access Workstation (PAW) documentation | Architecture diagram or policy describing how administrative tasks are performed |
+| RDP access policy | Firewall rules, NLA configuration, and MFA configuration for RDP access |
+| Privileged account review records | Evidence of regular review of privileged account membership (at least annually) |
+
+### Application Hardening Evidence
+
+| Evidence Item | Description |
+|---|---|
+| Installed software inventory | Current list of all installed software on each server |
+| Application hardening checklists | Completed hardening checklists for IIS, SQL Server, .NET runtime, and any other installed server software |
+| Microsoft Office macro policy (if Office is installed) | Group Policy setting or registry export showing macro restrictions |
+| Browser hardening configuration (if browsers are present) | Policy export or configuration screenshots showing plugin and execution restrictions |
+
+### Essential Eight Maturity Assessment Evidence
+
+Because four Essential Eight strategies are covered by Chapter 13, your assessor will also want:
+
+| Evidence Item | Description |
+|---|---|
+| Essential Eight self-assessment | Completed self-assessment against all eight strategies, scored to ML0–ML3 for each |
+| Application control strategy document | Describes what is allowed, how exceptions are handled, and how the allow-list is maintained |
+| Macro configuration policy document | Describes the approved macro execution policy and how it is enforced |
+
+---
+
+## Practical Steps: Preparing for Assessment
+
+1. Conduct a baseline configuration review before the assessment. Use the ASD Windows Server 2022 hardening guide as your checklist and document every setting against the requirement. Note gaps and remediate before assessment.
+
+2. Export your Group Policy Objects (GPOs). Assessors will review these in detail. Organise them by function (security baseline, application control, audit policy, etc.).
+
+3. Validate your application allow-list is in enforced mode, not audit mode. An allow-list in audit-only mode is not considered compliant. If you are transitioning, document the timeline and risk acceptance.
+
+4. Verify LAPS is functioning. Run a report showing last password rotation times across all servers. Stale entries indicate a gap.
+
+5. Run a privileged account review. Identify any accounts with administrative rights that do not need them and remove them before assessment.
+
+6. Document every exclusion formally. If a control cannot be implemented (for example, a specific protocol must remain enabled for a legacy integration), document the risk acceptance in your System Security Plan (SSP) with the Authorising Official&#x27;s signature.
+
+7. Collate all evidence into an evidence folder mapped to each control. An assessor will work through controls sequentially; having pre-organised evidence by control area significantly reduces assessment duration.
+
+---
+
+## Connection to System Authorisation
+
+Chapter 13 evidence does not exist in isolation. It feeds directly into your System Security Plan (SSP), which is the primary artefact for Authorisation to Operate (ATO). Your SSP must document:
+
+- All Chapter 13 controls selected as applicable
+- Implementation status of each control
+- Evidence references (pointers to your evidence folder)
+- Any exclusions with documented risk justification
+- The Authorising Official&#x27;s acceptance of residual risk
+
+For an OFFICIAL: Sensitive system, an IRAP assessment is strongly recommended (and may be required by your agency&#x27;s security policy) before authorisation. The IRAP assessor will independently verify the Chapter 13 evidence listed above.
+
+---
+
+## Key References
+
+- ASD Information Security Manual (March 2026): https://www.cyber.gov.au/sites/default/files/2026-03/Information%20security%20manual%20(March%202026).pdf
+- ASD Hardening Microsoft Windows Server: https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/system-hardening/hardening-microsoft-windows-server
+- Essential Eight Maturity Model: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight
+- Essential Eight to ISM Mapping: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping
+- IRAP Assessors Register: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+</pre></div>
+                </div>
+                <div class="output-panel">
+                  <div class="output-header without-header">Without Skill (Baseline)</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">References ISM Chapter 13 (System Hardening) as the relevant guideline</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers OS hardening requirements: disable unnecessary services, remove/rename default accounts, apply ASD-approved hardening guide</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions application allow-listing as a key ISM/Essential Eight control</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States least privilege principle: no standing administrative access; use of Privileged Access Management (PAM)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Lists evidence types required: hardening checklists, configuration screenshots or CIS benchmark scan results, PAM solution logs, software allow-list policy</span></div></div></div>
+                  <div class="output-text"><pre>ISM Chapter 13 System Hardening: Requirements and Evidence for Windows Server 2022
+
+Overview
+
+The Australian Government Information Security Manual (ISM), published by the Australian Signals Directorate (ASD), dedicates Chapter 13 to System Hardening. This chapter establishes baseline security controls that reduce the attack surface of operating systems and applications. For a Windows Server 2022 deployment in a state government environment, Chapter 13 is the primary technical hardening reference. It aligns closely with ASD&#x27;s Hardening guidance and the Essential Eight maturity model.
+
+The controls in Chapter 13 are grouped across several domains. Below is a structured walkthrough of each major domain, what the ISM requires, and what evidence an assessor would expect to see.
+
+---
+
+1. Operating System Hardening
+
+ISM Requirements
+
+- Use the latest stable, supported version of the operating system. Windows Server 2022 satisfies this at present, but patching must be kept current.
+- Apply vendor-supplied patches within defined timeframes. For internet-facing systems, critical patches must be applied within 48 hours; for other systems, within one month (aligned with Essential Eight Patch OS control).
+- Remove or disable all unnecessary operating system components, features, and services. This includes disabling legacy protocols such as SMBv1, NetBIOS over TCP/IP, and LLMNR where not required.
+- Configure the OS in accordance with a hardening standard. ASD&#x27;s Windows Server 2022 hardening guide and the corresponding ACSC guidance provide the baseline.
+- Disable or restrict AutoRun and AutoPlay.
+- Ensure the OS boots from internal storage only, and configure BIOS/UEFI settings to prevent booting from removable media.
+- Enable Secure Boot and, where supported, Trusted Platform Module (TPM) 2.0 integration.
+
+Evidence to Collect
+
+- Patch management records showing patch dates, patch levels, and compliance against the 48-hour and one-month thresholds.
+- System build documentation or baseline configuration record referencing the applicable hardening standard.
+- Screenshots or exported Group Policy results (rsop.msc or gpresult /h) showing disabled legacy features and services.
+- Windows Features list (Get-WindowsFeature) showing only required roles and features are installed.
+- BIOS/UEFI configuration screenshots or vendor attestation confirming Secure Boot enabled and boot order restrictions.
+- Results of a CIS Benchmark or ACSC hardening assessment tool run against the server.
+
+---
+
+2. Application Hardening
+
+ISM Requirements
+
+- Only approved and required applications are installed. Maintain a documented software register.
+- Application whitelisting (now called application control) must be implemented. ASD mandates this as part of the Essential Eight. On Windows Server 2022, this is achieved via Windows Defender Application Control (WDAC) or AppLocker.
+- Web browsers and PDF viewers are hardened. While less critical on a server, any browser-accessible management interfaces must use hardened configurations.
+- Disable or remove web-based administrative interfaces if not required.
+- Office productivity software macros must be disabled or restricted; only trusted, signed macros from approved locations should be permitted if needed.
+- Uninstall or disable software development tools (compilers, interpreters) unless the server&#x27;s function requires them.
+- Ensure all installed applications are patched. Application patches, particularly for internet-facing components (IIS, .NET Framework, SQL Server), must be applied within 48 hours for critical patches affecting internet-facing services.
+
+Evidence to Collect
+
+- Installed software inventory (Get-WmiObject Win32_Product or similar) compared against the approved software register.
+- Application control policy export (WDAC XML policy file or AppLocker GPO export) and evidence it is in enforce mode (not audit mode).
+- Event logs showing application control blocks, demonstrating the policy is active.
+- Patch records for all installed applications.
+- Group Policy or registry settings showing macro restrictions.
+
+---
+
+3. Authentication Hardening
+
+ISM Requirements
+
+- Enforce strong password policies: minimum length of at least 14 characters for privileged accounts, complexity requirements, and password history.
+- Multi-factor authentication (MFA) must be used for all remote access and for all privileged account logons. This is an Essential Eight requirement and is reflected in ISM controls.
+- Privileged accounts must not be used for standard tasks such as web browsing or email.
+- Local administrator accounts must be managed. The built-in Administrator account should be renamed or disabled; use LAPS (Local Administrator Password Solution) for unique, rotating local admin passwords across servers.
+- Service accounts must use unique, strong passwords and be granted only the minimum privileges required.
+- Implement account lockout policies to mitigate brute-force attacks.
+- Disable or restrict the use of NTLM authentication where possible; prefer Kerberos.
+- Restrict which accounts can log on to the server interactively or via Remote Desktop.
+
+Evidence to Collect
+
+- Password policy export (Group Policy or fine-grained password policy) showing minimum length, complexity, history, and lockout thresholds.
+- Documentation of MFA solution deployed and scope (which accounts and access paths are covered).
+- LAPS deployment confirmation (registry keys, GPO, or Intune policy showing LAPS is enabled and password rotation is configured).
+- Privileged Access Workstation (PAW) policy or documentation showing privileged accounts are separated.
+- User Rights Assignment export (secedit or Group Policy) showing logon rights are restricted.
+- Evidence that NTLM restrictions are in place where applicable (e.g., Group Policy: Network Security: Restrict NTLM settings).
+
+---
+
+4. Network Hardening
+
+ISM Requirements
+
+- The Windows Firewall must be enabled on all profiles (Domain, Private, Public) and configured to block inbound connections unless explicitly permitted.
+- Only required network ports and protocols are open. Unnecessary services must be stopped and their associated firewall rules removed.
+- Remote management must use encrypted channels only. RDP must require Network Level Authentication (NLA). Prefer Windows Admin Center, SSH (where applicable), or other hardened management interfaces over older protocols.
+- Disable server message block (SMBv1). Use SMBv3 with encryption where file sharing is required.
+- Disable LLMNR and NetBIOS name resolution via Group Policy to prevent name poisoning attacks.
+- Restrict Remote Desktop Protocol access to specific IP ranges or jump servers.
+- Implement IPsec or equivalent where lateral movement between servers must be restricted.
+
+Evidence to Collect
+
+- Windows Firewall policy export or Group Policy showing rules, default deny posture, and all profiles enabled.
+- Port scan results (e.g., Nmap output) confirming only required ports are exposed.
+- NLA requirement setting confirmed in Group Policy (Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Remote Desktop Services).
+- SMBv1 disabled confirmed via Get-SmbServerConfiguration or Group Policy.
+- LLMNR and NetBIOS disabled confirmed via Group Policy settings and registry values.
+- Network diagram showing where the server sits and what firewall or segmentation controls exist at the network perimeter.
+
+---
+
+5. Logging and Auditing
+
+ISM Requirements
+
+- Enable Windows Security auditing for the following event categories at minimum: Account Logon, Account Management, Logon/Logoff, Object Access (for sensitive resources), Policy Change, Privilege Use, and System events.
+- Forward logs to a centralised Security Information and Event Management (SIEM) system or a protected, centralised log repository.
+- Log retention must meet the minimum period specified in the ISM — typically at least 18 months for government systems, with 90 days available online.
+- Protect audit logs from unauthorised modification or deletion.
+- Enable PowerShell script block logging, module logging, and transcription to detect and investigate malicious PowerShell use.
+
+Evidence to Collect
+
+- Audit policy output (auditpol /get /category:*) confirming all required categories are enabled.
+- Screenshot or configuration export from the SIEM showing the server is an active log source.
+- Log retention policy documentation and storage configuration showing 18-month retention.
+- PowerShell logging Group Policy settings (Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Windows PowerShell).
+- Sample log entries demonstrating log forwarding is operational (e.g., syslog or Windows Event Forwarding confirmation).
+
+---
+
+6. Restricting Administrative Privileges
+
+ISM Requirements
+
+- Apply the principle of least privilege. Users and services are granted only the minimum access required.
+- Privileged accounts must be dedicated accounts, separate from standard user accounts.
+- Time-based or just-in-time (JIT) privileged access should be considered for administrative access.
+- Privileged access must be reviewed regularly; dormant or unnecessary privileged accounts must be removed.
+- Domain Administrator rights must not be used for day-to-day server administration where server-local administrator rights are sufficient.
+- Restrict the ability to install software to administrators only.
+
+Evidence to Collect
+
+- Export of local Administrators group membership on the server.
+- Active Directory privileged group membership reports (Domain Admins, Enterprise Admins, Server Operators, etc.).
+- Evidence of periodic access reviews (meeting minutes, sign-off records, or automated review reports).
+- Documentation of JIT or PAM (Privileged Access Management) solution if deployed.
+- Group Policy showing software installation restricted to administrators.
+
+---
+
+7. Virtualisation Hardening (where applicable)
+
+If Windows Server 2022 is deployed as a virtual machine or as a Hyper-V host, additional ISM controls apply.
+
+ISM Requirements
+
+- The hypervisor and virtualisation platform must be kept patched and hardened.
+- Virtual machine escape mitigations must be in place. Enable Virtualisation Based Security (VBS) and Hypervisor-Protected Code Integrity (HVCI) where supported.
+- Restrict access to the hypervisor management plane; do not use hypervisor management from general-purpose workstations.
+- Separate guest VMs of different sensitivity classifications if they process data at different classification levels.
+- Ensure virtual networks are segmented equivalently to physical networks.
+
+Evidence to Collect
+
+- Hypervisor patch level and version documentation.
+- VBS and HVCI enabled confirmed via msinfo32 or Get-CimInstance -ClassName Win32_DeviceGuard.
+- Network segmentation diagram for virtual switch configuration.
+- Hypervisor management access control policy.
+
+---
+
+8. Firmware and Supply Chain
+
+ISM Requirements
+
+- Ensure server firmware (BIOS/UEFI, BMC/iDRAC/iLO) is kept current and sourced from trusted vendor channels.
+- Disable unused firmware interfaces (e.g., disable unused USB ports, disable legacy PXE boot if not needed).
+- Where hardware supports it, enable firmware integrity verification.
+- Document the supply chain for hardware procurement to ensure equipment is from reputable sources.
+
+Evidence to Collect
+
+- Firmware version records and evidence of firmware update process.
+- BIOS/UEFI configuration screenshots showing disabled unused interfaces.
+- Hardware procurement documentation confirming authorised supply channels.
+
+---
+
+Summary: Evidence Package for an ISM Chapter 13 Assessment
+
+The following is a consolidated list of evidence artefacts an assessor will typically request for a Windows Server 2022 system hardening assessment:
+
+1. System baseline and build documentation referencing the applicable hardening standard (ACSC Windows Server 2022 hardening guide or CIS Benchmark).
+2. Group Policy results report (gpresult /h) or exported GPO settings for the server.
+3. Installed roles and features list (Get-WindowsFeature).
+4. Installed software inventory compared against approved software register.
+5. Patch management records (OS and application patches) with dates and approval records.
+6. Application control policy export (WDAC or AppLocker) confirming enforce mode.
+7. Application control event logs showing the policy is active.
+8. Password and lockout policy configuration export.
+9. MFA deployment documentation and scope.
+10. LAPS configuration confirmation.
+11. Local Administrators group membership.
+12. Privileged group membership reports and access review records.
+13. Windows Firewall policy export.
+14. Port scan results confirming only required ports are open.
+15. SMBv1 disabled confirmation.
+16. LLMNR and NetBIOS disabled confirmation.
+17. Audit policy output (auditpol /get /category:*).
+18. PowerShell logging Group Policy settings.
+19. SIEM log forwarding confirmation and log retention policy.
+20. Secure Boot and TPM configuration evidence.
+21. VBS and HVCI enabled (if virtualisation hardening applies).
+22. Firmware version and update records.
+
+---
+
+Practical Recommendations for Your Team
+
+Prior to assessment, run the ASD-provided hardening scripts or a CIS-CAT scan against the server and remediate all findings. The ACSC publishes Windows Server 2022 hardening guidance with accompanying Group Policy templates that can be applied directly. Ensure your Group Policy Objects are documented and that each policy setting maps back to a specific ISM control number; this simplifies the assessment conversation significantly.
+
+Assessors will typically check configuration both through documentation and through live technical inspection. Be prepared to demonstrate settings interactively on the server, not just via screenshots, as screenshots can be pre-staged. Ensure logging is operational and demonstrably forwarding to a centralised store before the assessment date.
+
+Maintain a controls register or compliance matrix that maps each ISM Chapter 13 control identifier to your implementation approach, the responsible team member, and the specific evidence artefact that demonstrates compliance. This register becomes your primary assessment artefact and significantly reduces the time spent during an on-site review.
+</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eval-item" id="eval-ism-3">
+            <button class="eval-toggle" onclick="toggleEval('ism-3')">
+              <span class="eval-label">Test 79: Essential Eight Ism Mapping</span>
+              <span class="eval-chevron">▼</span>
+            </button>
+            <div class="eval-content" style="display:none">
+              <div class="eval-prompt">
+                <strong>Prompt:</strong> Our organisation is required to achieve Essential Eight Maturity Level 2 by the end of this financial year. How does the Essential Eight relate to the broader ISM? Which ISM chapters and control areas does each of the eight strategies map to, and what does ML2 require us to implement for each strategy?
+              </div>
+              <div class="eval-outputs">
+                <div class="output-panel">
+                  <div class="output-header with-header">With Skill</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains that the Essential Eight is a prioritised subset of ISM controls, not a separate standard — Essential Eight compliance does not equal full ISM compliance</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Maps each of the 8 strategies to their primary ISM chapters (e.g., patch applications and OS → Ch. 14 System Management; MFA → Ch. 6/9/19; application control → Ch. 13 System Hardening)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Describes ML2 as requiring controls to be mostly aligned and addressing sophisticated threats, and distinguishes it from ML1 and ML3</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers MFA requirement at ML2: MFA for all remote access and privileged accounts</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States that ASD publishes an Essential Eight to ISM control mapping document</span></div></div></div>
+                  <div class="output-text"><pre># Essential Eight and the ISM: Relationship, Chapter Mapping, and ML2 Requirements
+
+## How the Essential Eight Relates to the Broader ISM
+
+The Essential Eight is not a separate standard — it is a prioritised subset of controls drawn directly from the Australian Information Security Manual (ISM), published by the Australian Signals Directorate (ASD). ASD identified these eight mitigation strategies as the highest-value actions an organisation can take to protect against the most common cyber threats, particularly opportunistic and targeted attacks.
+
+Key points about this relationship:
+
+- The ISM contains 22 guideline chapters covering the full breadth of government cybersecurity — from physical security and personnel screening through to cryptography, networking, and data transfers. The Essential Eight maps primarily into Chapters 6, 9, 13, 14, and 19 of the ISM.
+- Achieving Essential Eight ML2 is not the same as achieving full ISM compliance. An organisation that completes ML2 has addressed the most critical technical controls, but will still have significant gaps across the remaining ISM chapters (e.g., physical security, communications systems, media handling, software development, cryptographic key management, gateways, and data transfers).
+- For government entities, both ISM control compliance AND Essential Eight targets apply. The Essential Eight is effectively the &quot;do this first&quot; subset; the remaining ISM chapters address the full risk posture required for system authorisation.
+- Essential Eight Maturity Level 2 (ML2) is the ASD-recommended baseline for all government entities and reflects a posture designed to address sophisticated, targeted cyber threats. It is the 2026 target for Australian federal agencies.
+- ASD publishes an official Essential Eight to ISM control mapping document (https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping) that details the specific ISM control IDs covered by each strategy and maturity level.
+
+
+## Essential Eight — ISM Chapter Mapping and ML2 Requirements
+
+The table below maps each of the eight strategies to the primary ISM chapters they draw from, and describes what Maturity Level 2 requires your organisation to implement.
+
+---
+
+### 1. Application Control (Allow-listing)
+
+**Primary ISM Chapter:** Chapter 13 — System Hardening
+
+**ISM Domain:** Prevent execution of unapproved software on workstations and servers.
+
+**What ML2 Requires:**
+- Application control is implemented on workstations and internet-facing servers to prevent execution of unapproved executables, software libraries, scripts, and installers.
+- Application control rules are validated at least annually or when significant changes occur.
+- Application control is applied using a vendor-supported allow-listing technology (e.g., Microsoft AppLocker or Windows Defender Application Control).
+- Events where application control blocks execution are logged and reviewed.
+- Application control also covers scripts (e.g., PowerShell, VBScript) and installers, not just executables.
+
+ML2 builds on ML1 by extending coverage beyond just executables to include scripts and installers, and by requiring regular rule validation.
+
+---
+
+### 2. Patch Applications
+
+**Primary ISM Chapter:** Chapter 14 — System Management
+
+**ISM Domain:** Patch management, vulnerability remediation, software currency.
+
+**What ML2 Requires:**
+- Applications with known security vulnerabilities (critical/high severity) are patched or mitigated within 14 days of patch release.
+- Internet-facing applications with critical vulnerabilities are patched within 48 hours.
+- Applications that are no longer supported by vendors (end-of-life) are removed or replaced.
+- Patch status of applications is tracked centrally; automated scanning is used to identify missing patches.
+- Online services are updated within defined timeframes.
+
+ML2 extends ML1 by tightening patch timeframes and requiring a more systematic approach to tracking and reporting patch status across all applications.
+
+---
+
+### 3. Configure Microsoft Office Macros
+
+**Primary ISM Chapter:** Chapter 13 — System Hardening
+
+**ISM Domain:** Application hardening, restricting macro execution to prevent malicious code delivery.
+
+**What ML2 Requires:**
+- Microsoft Office macros are disabled for users who do not have a documented business requirement.
+- Only macros from trusted locations or signed by a trusted publisher are permitted to run.
+- Macro settings are enforced via Group Policy or equivalent configuration management — users cannot change macro settings themselves.
+- Antivirus scanning of macros is enabled.
+- Microsoft Office macro security settings are validated and reviewed regularly.
+
+ML2 moves beyond simply advising users not to run macros, requiring enforceable policy-based controls that prevent unapproved macros from executing regardless of user action.
+
+---
+
+### 4. User Application Hardening
+
+**Primary ISM Chapter:** Chapter 13 — System Hardening
+
+**ISM Domain:** Browser, Office, and PDF reader hardening to reduce attack surface.
+
+**What ML2 Requires:**
+- Web browsers are configured to block or disable: web advertisements, Flash, Java, and other high-risk browser plugins.
+- Web browsers do not process Java from the internet.
+- Internet Explorer 11 is disabled or removed (no longer supported).
+- PDF software is hardened — PDF viewers are configured to disable JavaScript execution.
+- Microsoft Office is hardened — Object Linking and Embedding (OLE) packages are blocked.
+- Hardening configurations are enforced via Group Policy or equivalent and cannot be changed by standard users.
+- Application hardening baselines are validated regularly.
+
+ML2 requires enforceable, policy-driven hardening rather than relying on default vendor settings or user behaviour.
+
+---
+
+### 5. Restrict Administrative Privileges
+
+**Primary ISM Chapters:** Chapter 13 — System Hardening; Chapter 6 — Personnel Security
+
+**ISM Domains:** Least privilege, privileged access management, personnel accountability.
+
+**What ML2 Requires:**
+- Administrative privileges are granted only where there is a documented business need; all privilege assignments are recorded.
+- Privileged users use separate accounts for privileged and unprivileged activities — no browsing the internet or reading email from a privileged account.
+- Privileged accounts are not used to access the internet or email.
+- Privileged access to operating systems and applications is validated at least annually; unnecessary privileges are revoked.
+- Use of privileged accounts is logged, and logs are reviewed regularly.
+- Just-in-time and just-enough-access approaches are implemented where feasible.
+
+ML2 requires documented review cycles and active enforcement of privilege separation, rather than ad hoc controls.
+
+---
+
+### 6. Patch Operating Systems
+
+**Primary ISM Chapter:** Chapter 14 — System Management
+
+**ISM Domain:** Patch management for operating system vulnerabilities.
+
+**What ML2 Requires:**
+- Operating systems with known critical vulnerabilities are patched within 14 days of patch release.
+- Internet-facing operating systems with critical vulnerabilities are patched within 48 hours.
+- End-of-life/unsupported operating systems are removed from the environment or subject to formal risk acceptance and compensating controls.
+- Patch status across all operating systems is tracked centrally; automated vulnerability scanning is used.
+- Operating system versions in use across the environment are inventoried and kept current.
+
+ML2 requires tighter patch timeframes and systematic tracking compared to ML1, and draws a clear line on end-of-life operating systems.
+
+---
+
+### 7. Multi-Factor Authentication (MFA)
+
+**Primary ISM Chapters:** Chapter 6 — Personnel Security; Chapter 9 — Enterprise Mobility; Chapter 19 — Networking
+
+**ISM Domains:** Identity and access management, remote access security, mobile device management.
+
+**What ML2 Requires:**
+- MFA is required for all users accessing remote access solutions (VPN, remote desktop, cloud services).
+- MFA is required for all users accessing internet-facing services that process or store sensitive data.
+- MFA is required for all privileged users (administrators, system accounts) regardless of access method.
+- MFA is required for all users accessing cloud service providers&#x27; management interfaces.
+- MFA solutions use phishing-resistant methods where possible (e.g., FIDO2/hardware tokens, certificate-based authentication) rather than SMS OTP alone.
+- MFA is enforced via policy and cannot be bypassed by users or help desk staff without a formal exception process.
+
+ML2 extends MFA coverage beyond ML1 to include a broader set of services and begins to transition away from weaker MFA factors such as SMS.
+
+---
+
+### 8. Regular Backups
+
+**Primary ISM Chapter:** Chapter 14 — System Management
+
+**ISM Domain:** Business continuity, backup management, resilience against data loss and ransomware.
+
+**What ML2 Requires:**
+- Backups of important data, software, and configuration settings are performed and retained for at least three months.
+- Backups are stored in a manner that prevents them from being encrypted or deleted in a ransomware event (i.e., offline or immutable storage; backups are not accessible from the production network).
+- Backup restoration is tested at least every three months to confirm recoverability.
+- Unprivileged accounts cannot access or delete backups; backup system access is restricted.
+- Backups cover all critical systems and data, including system configurations.
+
+ML2 requires tested, ransomware-resilient backups with regular restoration verification — moving well beyond simply scheduling backups to confirming they actually work.
+
+---
+
+## Summary: ISM Chapter Coverage of the Essential Eight
+
+| Essential Eight Strategy | Primary ISM Chapter(s) |
+|--------------------------|------------------------|
+| Application control | Ch. 13 System Hardening |
+| Patch applications | Ch. 14 System Management |
+| Configure Microsoft Office macros | Ch. 13 System Hardening |
+| User application hardening | Ch. 13 System Hardening |
+| Restrict administrative privileges | Ch. 13 System Hardening, Ch. 6 Personnel Security |
+| Patch operating systems | Ch. 14 System Management |
+| Multi-factor authentication | Ch. 6 Personnel Security, Ch. 9 Enterprise Mobility, Ch. 19 Networking |
+| Regular backups | Ch. 14 System Management |
+
+---
+
+## What ML2 Does NOT Cover (Broader ISM Obligations)
+
+Achieving Essential Eight ML2 addresses controls primarily within four ISM chapters (6, 9, 13, 14, and 19). Your organisation will still need to address the remaining 17+ ISM chapters for full ISM compliance and system authorisation readiness. Key areas not covered by the Essential Eight include:
+
+- **Chapter 1** — CISO appointment and security governance roles
+- **Chapter 2** — Cyber security incident response and ASD notification obligations
+- **Chapter 3** — Procurement and supply chain security
+- **Chapter 4** — Security documentation (System Security Plan, risk register)
+- **Chapter 5** — Physical security controls
+- **Chapter 7/8** — Communications infrastructure and systems
+- **Chapter 10** — Evaluated/certified product requirements
+- **Chapter 11/12** — IT equipment management and media sanitisation
+- **Chapter 15** — System monitoring, logging, and SIEM
+- **Chapter 16** — Secure software development
+- **Chapter 17** — Database hardening
+- **Chapter 18** — Email security (DMARC, DKIM, SPF)
+- **Chapter 20** — Cryptographic standards and key management
+- **Chapter 21** — Gateway and content filtering controls
+- **Chapter 22** — Data transfer controls and labelling
+
+For system authorisation (Authorisation to Operate), your organisation must address all applicable ISM controls across all relevant chapters — not just the Essential Eight. If your systems handle OFFICIAL: Sensitive information, all NC and OS-marked controls apply. An IRAP assessment is strongly recommended for OFFICIAL: Sensitive systems and mandatory for PROTECTED systems.
+
+---
+
+## Recommended Next Steps
+
+1. Conduct an Essential Eight gap assessment against ML2 criteria for each of the eight strategies.
+2. Prioritise remediation based on current maturity gaps; strategies touching Chapters 13 and 14 (hardening and patch management) tend to have the most breadth.
+3. Run the Essential Eight alongside a broader ISM gap analysis to identify the delta between ML2 compliance and full ISM compliance for your system&#x27;s classification level.
+4. Document progress in your System Security Plan (SSP) with evidence of implementation for each control.
+5. Reference the official ASD Essential Eight to ISM mapping: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping
+</pre></div>
+                </div>
+                <div class="output-panel">
+                  <div class="output-header without-header">Without Skill (Baseline)</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐ 3/5 assertions passed (60%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains that the Essential Eight is a prioritised subset of ISM controls, not a separate standard — Essential Eight compliance does not equal full ISM compliance</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Maps each of the 8 strategies to their primary ISM chapters (e.g., patch applications and OS → Ch. 14 System Management; MFA → Ch. 6/9/19; application control → Ch. 13 System Hardening)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Describes ML2 as requiring controls to be mostly aligned and addressing sophisticated threats, and distinguishes it from ML1 and ML3</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Covers MFA requirement at ML2: MFA for all remote access and privileged accounts</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">States that ASD publishes an Essential Eight to ISM control mapping document</span></div></div></div>
+                  <div class="output-text"><pre># Essential Eight and the ISM: ML2 Requirements and Control Mappings
+
+## How the Essential Eight Relates to the Broader ISM
+
+The Australian Signals Directorate (ASD) Information Security Manual (ISM) is the comprehensive cybersecurity framework that Australian government agencies and many regulated organisations must follow. It contains hundreds of controls organised across numerous chapters covering everything from governance and personnel security through to physical security, communications, cryptography, and system-specific guidance.
+
+The Essential Eight is a prioritised subset of mitigation strategies drawn from the ISM. It was developed by ASD as a baseline set of eight strategies that, when implemented together, make it significantly harder for adversaries to compromise systems. The Essential Eight is not separate from the ISM — it is derived from and cross-referenced within the ISM. Specifically, the Essential Eight strategies correspond to controls distributed across several ISM chapters, primarily:
+
+- Chapter 2: Guidelines for Cybersecurity Roles
+- Chapter 6: Guidelines for System Hardening
+- Chapter 7: Guidelines for Identity and Access Management
+- Chapter 10: Guidelines for Software Development
+- Chapter 11: Guidelines for Database Systems (partial overlap)
+- Chapter 12: Guidelines for Email
+- Chapter 13: Guidelines for Networking
+- Chapter 14: Guidelines for Cryptography (partial overlap)
+- Chapter 15: Guidelines for Sensitive and Classified Information (partial overlap)
+
+The ISM provides the full control catalogue with applicability ratings (should/must), while the Essential Eight provides a pragmatic baseline prioritisation. ASD&#x27;s Maturity Model for the Essential Eight defines three maturity levels (ML1, ML2, ML3) that progressively implement the controls underlying each strategy. Organisations achieving ML2 have implemented controls that are generally aligned with mitigating targeted intrusions and more capable adversaries than those addressed at ML1.
+
+---
+
+## The Eight Strategies: ISM Mappings and ML2 Requirements
+
+---
+
+### 1. Application Control
+
+**What it is:** Preventing execution of unapproved or malicious programs, including executables, software libraries, scripts, and installers.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for System Hardening (ISM-0843, ISM-1490, ISM-1657, ISM-1658, ISM-1659, and related controls)
+- Also touches Guidelines for Software Development for approved software baselines
+
+**ML2 Requirements:**
+- Application control is implemented on all workstations and internet-facing servers (not just a subset).
+- Application control prevents execution of executables, software libraries (DLLs), scripts (including PowerShell, batch files, WSF, HTA, and similar), installers, compiled HTML, HTML applications, and control panel applets from the full file system — not just specific directories.
+- Microsoft&#x27;s recommended block rules (or equivalent) are applied to prevent known bypasses.
+- Application control rulesets are validated at least annually or when significant changes occur.
+- Allowed and blocked execution events are logged.
+- Application control is implemented using a rules-based approach (e.g., publisher rules, hash rules, path rules ordered by preference of publisher over hash over path).
+
+---
+
+### 2. Patch Applications
+
+**What it is:** Applying security patches and updates to applications to close known vulnerabilities.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for System Hardening (ISM-1690, ISM-1691, ISM-1692, ISM-1695, and related patch management controls)
+- Also touches Guidelines for Software Development and Guidelines for Procurement
+
+**ML2 Requirements:**
+- A vulnerability scanner is used at least fortnightly to identify missing patches or updates for applications.
+- Patches, updates, or vendor mitigations for security vulnerabilities in internet-facing services are applied within two weeks of release, or within 48 hours if an exploit exists.
+- Patches, updates, or vendor mitigations for security vulnerabilities in office productivity suites, web browsers, browser extensions, email clients, PDF viewers, and security products are applied within two weeks of release, or within 48 hours if an exploit exists.
+- Patches for other applications are applied within one month of release.
+- Applications that are no longer supported by vendors (end-of-life) are removed or replaced.
+- An automated mechanism is used to confirm and record patch application.
+
+---
+
+### 3. Configure Microsoft Office Macro Settings
+
+**What it is:** Restricting or blocking Microsoft Office macros to prevent malicious macro-based malware from executing.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for System Hardening (ISM-1672, ISM-1673, ISM-1674, ISM-1675, ISM-1676, and related macro controls)
+- Also touches email security guidance
+
+**ML2 Requirements:**
+- Only macros that are digitally signed by trusted publishers, or are part of a managed environment where macros are controlled, are permitted to run.
+- Macros in files originating from the internet are blocked.
+- Macro antivirus scanning is enabled (where supported).
+- Macro security settings are centrally managed and users cannot change them.
+- Macros are blocked from making Win32 API calls (where the capability exists, e.g., via Attack Surface Reduction rules in Microsoft Defender).
+- Logging of blocked macro execution events is implemented.
+
+---
+
+### 4. User Application Hardening
+
+**What it is:** Hardening user-facing applications — particularly web browsers, PDF readers, and Microsoft Office — to reduce the attack surface.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for System Hardening (ISM-1486, ISM-1485, ISM-1679, ISM-1680, ISM-1681, ISM-1682, and related controls)
+- Also touches Guidelines for Networking (web content filtering)
+
+**ML2 Requirements:**
+- Web browsers do not process Java from the internet (Java disabled or removed from browsers).
+- Web browsers do not process web advertisements from the internet (ad blocking or content filtering applied).
+- Internet Explorer 11 is disabled or removed (where applicable, given its end-of-life status).
+- Web browsers are hardened using vendor or ASD hardening guides.
+- PDF viewers are hardened using vendor or ASD hardening guides.
+- Microsoft Office is hardened (e.g., OLE package activation blocked, DDE disabled where applicable).
+- .NET Framework 3.5 (which includes .NET 2.0 and 3.0) is disabled where not required.
+- Windows Script Host (WSH) is disabled where not required.
+- PowerShell is configured to use Constrained Language Mode where possible.
+- Hardening configurations are centrally managed.
+
+---
+
+### 5. Restrict Administrative Privileges
+
+**What it is:** Limiting the number of users with administrative privileges and tightly controlling how those accounts are used.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for Identity and Access Management (ISM-1507, ISM-1508, ISM-1509, ISM-1513, ISM-1524, ISM-1549, and related privileged access controls)
+- Also touches Guidelines for Cybersecurity Roles (defining roles and responsibilities for privileged users)
+
+**ML2 Requirements:**
+- Privileged access to systems is validated when first requested and revalidated at least annually.
+- Privileged users are assigned a separate privileged account that is used only for privileged tasks; they use a separate unprivileged account for standard tasks and email/web browsing.
+- Privileged accounts (excluding privileged service accounts) are prevented from accessing the internet, email, and web services.
+- Privileged accounts are not permitted to create accounts or assign privileges to accounts beyond what is required for their administrative role.
+- Requests for privileged access are documented and approved.
+- Just-in-time administration is implemented where feasible (i.e., privileges are granted for specific tasks and then removed).
+- The number of privileged accounts is minimised.
+- Privileged account activity is logged and protected from tampering.
+
+---
+
+### 6. Patch Operating Systems
+
+**What it is:** Applying security patches and updates to operating systems to close known vulnerabilities.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for System Hardening (ISM-1693, ISM-1694, ISM-1696, ISM-1697, and related OS patch controls)
+- Also touches Guidelines for Procurement (use of supported operating systems)
+
+**ML2 Requirements:**
+- A vulnerability scanner is used at least fortnightly to identify missing patches or updates for operating systems.
+- Patches, updates, or vendor mitigations for security vulnerabilities in internet-facing servers and network devices are applied within two weeks of release, or within 48 hours if an exploit exists.
+- Patches, updates, or vendor mitigations for security vulnerabilities in workstations, non-internet-facing servers, and network devices are applied within one month of release, or within 48 hours if an exploit exists.
+- Operating systems that are no longer supported by vendors (end-of-life) are removed or replaced.
+- Only the latest or previous release of an operating system (where supported) is used.
+- An automated mechanism is used to confirm and record patch application.
+
+---
+
+### 7. Multi-Factor Authentication (MFA)
+
+**What it is:** Requiring users to authenticate using more than one factor, to reduce the risk of credential-based compromise.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for Identity and Access Management (ISM-1173, ISM-1504, ISM-1505, ISM-1506, ISM-1679, and related MFA controls)
+- Also touches Guidelines for Networking (remote access and VPN authentication) and Guidelines for Cryptography (for token-based authentication)
+
+**ML2 Requirements:**
+- MFA is used for all users accessing internet-facing services (e.g., remote access solutions, cloud services, webmail).
+- MFA is used for all privileged users accessing systems and applications.
+- MFA is used when users perform privileged actions or access important data repositories (e.g., databases, code repositories).
+- MFA that is phishing-resistant (i.e., not SMS or voice call based) is strongly preferred; at ML2, phishing-resistant MFA is required for at least internet-facing services and privileged accounts.
+- MFA event logs are retained.
+- Failed MFA attempts are alerted on.
+
+Note: The ASD Essential Eight Maturity Model (updated versions from 2023 onwards) specifies that from ML2, MFA must be phishing-resistant for internet-facing services and privileged access — excluding weaker forms such as SMS OTP.
+
+---
+
+### 8. Regular Backups
+
+**What it is:** Backing up important data, software, and configuration settings regularly and testing restoration to ensure availability and recovery capability.
+
+**Relevant ISM Chapter and Controls:**
+- Primary chapter: Guidelines for Data Transfers and Content Filtering / Guidelines for System Management (ISM-1511, ISM-1512, ISM-1515, ISM-1516, ISM-0519, and related backup controls)
+- Also touches Guidelines for Sensitive and Classified Information and Guidelines for Physical Security (offsite backup storage)
+
+**ML2 Requirements:**
+- Backups of important data, software, and configuration settings are performed and retained for at least three months.
+- Backups are synchronised to enable restoration to a common point in time.
+- Backups are tested at least once when initially implemented and then at least annually (full restoration test).
+- Unprivileged accounts cannot access backups belonging to other accounts.
+- Unprivileged accounts cannot delete or modify backups.
+- Privileged accounts (other than backup administrator accounts) are prevented from accessing, modifying, or deleting backups.
+- Backups are stored offline or in a manner that prevents them from being encrypted or deleted by ransomware (e.g., immutable storage, air-gapped systems, or sufficiently isolated cloud backup repositories).
+
+---
+
+## Summary: ISM Chapter Mapping Table
+
+| Essential Eight Strategy         | Primary ISM Chapter(s)                                   |
+|----------------------------------|----------------------------------------------------------|
+| Application Control              | Guidelines for System Hardening                          |
+| Patch Applications               | Guidelines for System Hardening                          |
+| Configure Office Macro Settings  | Guidelines for System Hardening                          |
+| User Application Hardening       | Guidelines for System Hardening; Guidelines for Networking|
+| Restrict Administrative Privileges | Guidelines for Identity and Access Management; Guidelines for Cybersecurity Roles |
+| Patch Operating Systems          | Guidelines for System Hardening                          |
+| Multi-Factor Authentication      | Guidelines for Identity and Access Management; Guidelines for Networking |
+| Regular Backups                  | Guidelines for System Management / Data Transfers        |
+
+---
+
+## Practical Considerations for Achieving ML2
+
+Reaching ML2 by the end of the financial year requires a structured implementation programme. The strategies that typically require the most lead time are:
+
+1. **Application Control** — Deploying and tuning rules across all workstations and servers without breaking legitimate applications takes time and testing.
+2. **Restrict Administrative Privileges** — Restructuring privileged access patterns and implementing just-in-time administration often requires significant change management.
+3. **Multi-Factor Authentication (phishing-resistant)** — Hardware key rollout or integration of FIDO2/certificate-based authentication across all internet-facing systems can be technically complex.
+
+Patching and backup controls are generally easier to evidence if existing tooling is already in place but may require policy uplift and logging improvements.
+
+Organisations should consult the current ASD Essential Eight Maturity Model document (available on the Australian Cyber Security Centre website) and the ISM (updated monthly) for the precise, current control identifiers, as both documents are living publications subject to revision.
+</pre></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="eval-item" id="eval-ism-4">
+            <button class="eval-toggle" onclick="toggleEval('ism-4')">
+              <span class="eval-label">Test 80: Supply Chain Cloud Provider</span>
+              <span class="eval-chevron">▼</span>
+            </button>
+            <div class="eval-content" style="display:none">
+              <div class="eval-prompt">
+                <strong>Prompt:</strong> We are a private sector company that has just won a contract to provide cloud services to an Australian federal government agency. The contract requires ISM compliance. What are our obligations, what controls are most critical for our cloud environment, and do we need an IRAP assessment even though we are not a government entity ourselves?
+              </div>
+              <div class="eval-outputs">
+                <div class="output-panel">
+                  <div class="output-header with-header">With Skill</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#22c55e;font-weight:600;margin-bottom:8px">⭐⭐⭐⭐⭐ 5/5 assertions passed (100%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions the SSP as a document the cloud provider may need to produce or contribute to</span></div></div></div>
+                  <div class="output-text"><pre># ISM Compliance for Private Sector Cloud Providers Serving Australian Federal Government
+
+## Overview
+
+Congratulations on winning the contract. As a private sector company providing cloud services to an Australian federal government agency, you are now part of the government&#x27;s supply chain and are subject to the Australian Information Security Manual (ISM), published by the Australian Signals Directorate (ASD). This document addresses your three questions: your obligations, the most critical controls for a cloud environment, and the IRAP assessment requirement.
+
+---
+
+## 1. Your Obligations as a Cloud Service Provider in the Government Supply Chain
+
+### The ISM Applies to You
+
+The ISM is not limited to government entities themselves. Chapter 3 (Procurement &amp; Outsourcing) explicitly requires government agencies to ensure their outsourced service providers and cloud vendors implement ISM-aligned security controls. When you sign a contract requiring ISM compliance, you are contractually and practically subject to the same obligations as the agency itself for the systems and data in scope.
+
+Your obligations flow from two directions:
+
+- **Contractual**: The government agency&#x27;s contract will specify ISM compliance requirements, classification level of information you will handle, and likely mandate a System Security Plan (SSP) and IRAP assessment as deliverables.
+- **Framework-based**: The ISM itself (Chapter 3) requires agencies to hold vendors to equivalent security standards, meaning you must implement controls at the appropriate classification level.
+
+### Determine the Classification Level First
+
+Your first obligation is to confirm the classification level of the government information your cloud service will store, process, or transmit. This determines which controls apply:
+
+- **OFFICIAL: Sensitive (OS)** — the most common level for federal agency systems; requires NC + OS controls
+- **PROTECTED** — classified information; requires NC + OS + P controls; most stringent common level for cloud services
+- **SECRET / TOP SECRET** — rare for private sector cloud; requires additional accreditation
+
+If the contract does not state the classification explicitly, default to OFFICIAL: Sensitive and confirm with the agency. If any PROTECTED information is in scope, the full PROTECTED control set applies.
+
+### Core Obligations Summary
+
+| Obligation | ISM Reference | What You Must Do |
+|-----------|--------------|-----------------|
+| Appoint a CISO or equivalent security lead | Ch. 1 | Designate a named individual with authority over security for the service |
+| Produce a System Security Plan (SSP) | Ch. 4 | Document system boundary, classification, controls implemented, and risk register |
+| Implement applicable controls | All chapters | Implement NC + OS controls (and P controls if handling PROTECTED data) |
+| Undergo IRAP assessment | Ch. 3, IRAP framework | Independent review before the system is authorised to operate (see Section 3 below) |
+| Report incidents to ASD | Ch. 2 | Notify the agency (and ASD for significant incidents) within required timeframes |
+| Maintain ongoing compliance | Ch. 14, 15 | Patch management, continuous monitoring, re-assessment every 24 months |
+| Manage sub-contractors | Ch. 3 | If you sub-contract any components, those sub-contractors must meet equivalent requirements |
+
+---
+
+## 2. Most Critical Controls for Your Cloud Environment
+
+For a cloud service provider handling government information, the following control domains are the highest priority. These are drawn from the ISM&#x27;s 22 guideline chapters, with emphasis on controls that address the specific risk profile of cloud environments.
+
+### Priority 1 — Identity, Access, and Privileged Access Management
+
+Cloud environments expose management planes that, if compromised, grant access to all hosted data and infrastructure. The ISM is explicit about this risk.
+
+**Key controls (Chapters 6, 13):**
+- Multi-factor authentication (MFA) for all administrative access, remote access, and any access to government data
+- No standing administrative privileges — use just-in-time (JIT) or break-glass models
+- Separate administrative accounts from user accounts
+- Regular access reviews; prompt revocation on role change or termination
+- These map directly to the Essential Eight: &quot;Restrict administrative privileges&quot; and &quot;Multi-factor authentication&quot;
+
+### Priority 2 — System Hardening (Chapter 13)
+
+Every compute instance, container, and managed service component must be hardened before deployment.
+
+**Key controls:**
+- Remove or disable all unnecessary services, ports, and protocols on every VM or container image
+- Implement application allow-listing where technically feasible
+- Enforce Secure Boot and firmware integrity controls
+- Disable default/vendor accounts
+- Harden cloud management consoles (restrict API access, enforce MFA on cloud console logins)
+- For OS patches: critical patches within 48 hours for internet-facing systems, 14 days for internal
+
+### Priority 3 — Cryptography (Chapter 20)
+
+All government data in transit and at rest must be protected with ASD-approved algorithms.
+
+**Key controls:**
+- Data at rest: AES-256 encryption (required for PROTECTED; strongly recommended for OS)
+- Data in transit: TLS 1.2 minimum; TLS 1.3 preferred. SSL and TLS 1.0/1.1 must be disabled
+- SSH: SSH2 only; prefer ED25519 or RSA-4096
+- Key management: documented procedures for key generation, storage, rotation, and destruction
+- Use ASD-approved or FIPS 140-2/3 validated cryptographic modules, especially for PROTECTED
+
+### Priority 4 — System Monitoring and Logging (Chapter 15)
+
+Government contracts will require evidence of comprehensive, tamper-evident logging.
+
+**Key controls:**
+- Centralised logging (SIEM or equivalent) covering all system and access events
+- Log all privileged access, configuration changes, authentication events, and data access
+- Minimum retention: 18 months for OFFICIAL: Sensitive and PROTECTED systems
+- Logs must be stored separately from the monitored system (cannot be modified by a compromised host)
+- Alerting on anomalous events with documented investigation procedures
+
+### Priority 5 — Patch Management (Chapter 14)
+
+**Key controls (aligned to ISM patch SLAs):**
+
+| Patch Criticality | Internet-Facing | Internal Systems |
+|------------------|-----------------|-----------------|
+| Critical (CVSS 9–10) | 48 hours | 14 days |
+| High (CVSS 7–8.9) | 14 days | 14 days |
+| Medium (CVSS 4–6.9) | 30 days | 30 days |
+| Low | Next maintenance window | Next maintenance window |
+
+This maps to the Essential Eight strategies &quot;Patch applications&quot; and &quot;Patch operating systems.&quot;
+
+### Priority 6 — Network Segmentation (Chapter 19)
+
+**Key controls:**
+- Segment government workloads from other tenants and from your internal corporate network
+- Documented, reviewed firewall rule sets (no broad allow rules)
+- Restrict outbound internet access from workloads handling government data
+- Use private endpoints where possible; avoid exposing management interfaces to the public internet
+- DNSSEC where applicable
+
+### Priority 7 — Security Documentation (Chapter 4)
+
+The government agency&#x27;s Authorising Official will require documentary evidence before issuing an Authorisation to Operate (ATO). You must produce and maintain:
+
+- **System Security Plan (SSP)** — the primary document. Must cover system boundary, classification, all implemented controls, exclusions with justifications, and the risk register
+- **Security Risk Assessment** — formal risk identification, analysis, and treatment
+- **Incident Response Plan** — tested procedures for detecting, responding to, and reporting security incidents
+- **Change Management Plan** — approval process for all changes to the cloud environment
+- **Continuous Monitoring Plan** — how you will maintain and evidence ongoing compliance
+
+### Priority 8 — Incident Response and ASD Notification (Chapter 2)
+
+**Key obligations:**
+- Define what constitutes a security incident for your cloud service
+- Document and test response procedures
+- For OFFICIAL: Sensitive and above: you must notify the agency immediately on discovery of a significant incident; the agency is then responsible for ASD notification
+- Preserve forensic evidence; conduct post-incident reviews
+
+### Essential Eight — Minimum Baseline
+
+The ASD recommends all government-connected systems achieve Essential Eight Maturity Level 2 (ML2) as the 2026 baseline. As a cloud provider, you should target ML2 across all eight strategies:
+
+1. Application control (allow-listing)
+2. Patch applications
+3. Configure Microsoft Office macros (if Office is in scope)
+4. User application hardening
+5. Restrict administrative privileges
+6. Patch operating systems
+7. Multi-factor authentication
+8. Regular backups (3-2-1 rule; tested; offline/offsite copy)
+
+Full Essential Eight to ISM control mapping: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping
+
+---
+
+## 3. Do You Need an IRAP Assessment Even Though You Are Not a Government Entity?
+
+**Yes. In practice, an IRAP assessment will almost certainly be required.**
+
+Here is the precise picture:
+
+### The ISM Position
+
+The ISM sets the following requirements for IRAP assessment:
+
+- **Mandatory** for systems handling PROTECTED and above
+- **Strongly recommended** for systems handling OFFICIAL: Sensitive
+- **Government policy** for any system used to deliver government services
+
+The obligation attaches to the **system**, not the entity operating it. Because your cloud service stores, processes, or transmits Australian government information, the system must be assessed — regardless of whether you are a private company.
+
+### What the Government Agency Will Require
+
+The government agency cannot issue an Authorisation to Operate (ATO) for your cloud service without an IRAP assessment report to inform that decision. In practice, the contract will either:
+
+- Require you to commission and fund an IRAP assessment of your service, or
+- Specify that the agency will conduct the IRAP assessment but you must provide full access, artefacts, and cooperation
+
+Either way, you cannot avoid IRAP. If the contract does not spell this out, raise it immediately with the agency — an ATO cannot be issued without it.
+
+### What an IRAP Assessment Involves
+
+An IRAP (Infosec Registered Assessors Program) assessment is an independent review by an ASD-certified assessor. The assessor must be:
+- Listed on the ASD IRAP Assessors Register: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+- Independent of your organisation (cannot be your own staff or a related party)
+
+**Artefacts you must prepare:**
+- Current System Security Plan (SSP)
+- Network architecture diagrams
+- Asset register (hardware and software)
+- Risk register with current risk ratings
+- Full policy suite (all security policies referenced in the SSP)
+- Evidence of implemented controls (configuration screenshots, logs, test results)
+- Patch management reports
+- Incident register (last 12 months)
+- Plan of Action and Milestones (POA&amp;M) for any known gaps
+
+**Assessment cycle:**
+- Initial assessment before the system is authorised to operate
+- Re-assessment every 24 months minimum
+- Re-assessment also required after significant changes (major architecture changes, new classification level, major new functionality)
+
+### Practical Recommendation: Start IRAP Preparation Now
+
+IRAP assessments typically take 8–16 weeks from engagement to final report, depending on system complexity. The government agency will need the IRAP Assessment Report before it can sign an ATO. Your steps should be:
+
+1. **Confirm the classification level** with the agency (OFFICIAL: Sensitive vs PROTECTED drives control selection significantly)
+2. **Define the system boundary** — scope only what is necessary for the government service
+3. **Draft the SSP** — this is the centrepiece of the assessment
+4. **Implement and evidence controls** across the priority domains above
+5. **Engage an IRAP assessor** from the ASD register early — assessors are in demand
+6. **Remediate findings** from the assessment via a POA&amp;M
+7. **Support the agency&#x27;s ATO decision** with the completed IRAP report
+
+---
+
+## Summary
+
+As a private sector cloud provider delivering services under an ISM-compliance contract with an Australian federal government agency, your obligations are substantive and non-negotiable. The ISM framework applies to your system by virtue of the government information it handles. You must implement controls at the appropriate classification level (at minimum NC + OS, and NC + OS + P if handling PROTECTED data), produce a full System Security Plan, and undergo an IRAP assessment by an ASD-certified independent assessor before the agency can authorise your service to operate. The most critical technical controls for your cloud environment are privileged access management with MFA, system hardening, ASD-approved cryptography, comprehensive logging with 18-month retention, disciplined patch management, and network segmentation. Essential Eight Maturity Level 2 should be your minimum target across all eight strategies. Begin IRAP preparation immediately, as lead times are significant and the agency&#x27;s ATO — and your contract deliverables — depend on it.
+
+---
+
+**References**
+- ISM March 2026: https://www.cyber.gov.au/sites/default/files/2026-03/Information%20security%20manual%20(March%202026).pdf
+- IRAP Assessors Register: https://www.cyber.gov.au/resources-business-and-government/assessment-and-evaluation-programs/irap/irap-assessors
+- Essential Eight: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight
+- Essential Eight to ISM Mapping: https://www.cyber.gov.au/business-government/asds-cyber-security-frameworks/essential-eight/essential-eight-maturity-model-and-ism-mapping
+</pre></div>
+                </div>
+                <div class="output-panel">
+                  <div class="output-header without-header">Without Skill (Baseline)</div>
+                  <div class="output-grading"><div class="grade-summary" style="color:#f59e0b;font-weight:600;margin-bottom:8px">⭐⭐⭐ 3/5 assertions passed (60%)</div><div class="assertions"><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Confirms that private sector organisations providing ICT services to Australian government agencies are required to comply with the ISM under their contract</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">States that cloud service providers must be assessed using ASD Cloud Security Guidance and the ISM Chapter 3 (Procurement and Outsourcing) requirements apply</span></div><div class="assertion"><span class="assertion-icon">❌</span><span class="assertion-text">Identifies key chapters for cloud providers: Ch. 13 (hardening), Ch. 14 (patch/change management), Ch. 15 (logging/monitoring), Ch. 19 (networking/segmentation), Ch. 20 (cryptography)</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Explains that IRAP assessment may be required by the contracting agency for the cloud service — especially if handling PROTECTED information — even for private sector providers</span></div><div class="assertion"><span class="assertion-icon">✅</span><span class="assertion-text">Mentions the SSP as a document the cloud provider may need to produce or contribute to</span></div></div></div>
+                  <div class="output-text"><pre>## ISM Compliance Obligations for a Private Sector Cloud Service Provider Contracting with an Australian Federal Government Agency
+
+### Overview
+
+The Australian Government Information Security Manual (ISM), published and maintained by the Australian Signals Directorate (ASD), establishes the cybersecurity framework that Australian government agencies must apply when managing their information and systems. When a private sector company wins a contract to deliver cloud services to a federal government agency, the ISM&#x27;s requirements flow down through that contractual relationship. You are not directly subject to the ISM as a non-government entity, but your customer — the agency — is, and it cannot outsource its compliance obligations. This means the agency will contractually require you to meet ISM controls as a condition of providing services.
+
+---
+
+### 1. Your Legal and Contractual Obligations
+
+**The ISM applies indirectly but binding-ly through contract**
+
+The agency is bound by the ISM and by the Protective Security Policy Framework (PSPF). Neither framework has direct legislative force over private companies, but the agency cannot legally procure services that place its information at unacceptable risk. Consequently, your contract will almost certainly contain clauses that:
+
+- Require you to implement and maintain specific ISM controls for the systems and services in scope.
+- Require you to support or undergo an Information Security Registered Assessors Program (IRAP) assessment.
+- Require you to operate under a System Security Plan (SSP) reviewed and approved by the agency&#x27;s Chief Information Security Officer (CISO) or equivalent.
+- Require breach notification within timeframes aligned with ASD guidance (often 24–72 hours for significant cyber incidents).
+- Require annual attestation or evidence of continued compliance.
+- Require compliance with the PSPF for any handling of classified information (if applicable), including PROTECTED or higher data.
+
+**Classification of information matters**
+
+The data classification of the information you will process or store determines the intensity of controls required:
+
+- OFFICIAL: Baseline controls; most commercial cloud arrangements sit here.
+- OFFICIAL: Sensitive: Additional controls, restricted access, elevated data handling requirements.
+- PROTECTED: Significantly elevated controls; requires IRAP-assessed cloud services; generally must use services listed on the ASD Certified Cloud Services List (CCSL) or its successor, the Cloud Services Certification Program (CSCP).
+- SECRET / TOP SECRET: Rarely applicable to commercial cloud; requires highly specialised government-approved solutions.
+
+---
+
+### 2. Most Critical ISM Controls for a Cloud Environment
+
+The ISM is published as a living document and contains hundreds of controls across many domains. For a cloud services provider, the following control families are most critical and most scrutinised during any assessment or audit:
+
+**a. Identity and Access Management (IAM)**
+
+- Multi-factor authentication (MFA) is mandatory for all privileged access and for any remote access to systems handling government data.
+- Least-privilege principles must be enforced; service accounts and administrative roles must be tightly scoped and regularly reviewed.
+- Privileged access workstations (PAWs) or equivalent segregation for administrative functions.
+- Regular access reviews and prompt deprovisioning upon role change or departure.
+
+**b. Data Protection and Cryptography**
+
+- Data at rest must be encrypted using ASD-approved cryptographic algorithms (AES-256 is standard; refer to ISM cryptographic guidance).
+- Data in transit must use TLS 1.2 or higher; TLS 1.3 is preferred.
+- Key management must be robust: customer-managed keys or government-controlled keys are required for PROTECTED data; key storage must be segregated from the data it protects.
+- For PROTECTED data, only Australian-hosted infrastructure is generally acceptable unless specific approval is obtained.
+
+**c. Vulnerability and Patch Management**
+
+- Critical and high-severity vulnerabilities must be patched within tight timeframes: ISM guidance typically requires critical patches within 48 hours for internet-facing systems and 2 weeks for others.
+- Automated vulnerability scanning of infrastructure, containers, and application code must be in place and evidence retained.
+- Software Bill of Materials (SBOM) and supply chain risk management controls are increasingly expected.
+
+**d. System Hardening**
+
+- Operating systems, hypervisors, container platforms, and application runtimes must be hardened against ASD&#x27;s hardening guides (which align with and reference CIS Benchmarks).
+- Unnecessary services, ports, and features must be disabled.
+- Configuration management must ensure hardened baseline configurations are enforced and drift is detected.
+
+**e. Network Security and Segmentation**
+
+- Government workloads must be logically (and often physically) isolated from other tenants.
+- Firewalls, security groups, and network access controls must enforce least-privilege network flows.
+- Ingress and egress filtering must be in place; north-south and east-west traffic should be inspected.
+- DDoS mitigation must be available for internet-exposed services.
+
+**f. Logging, Monitoring, and Incident Response**
+
+- Comprehensive audit logging of all privileged actions, authentication events, configuration changes, and data access is mandatory.
+- Logs must be tamper-evident, retained for a minimum period (typically 7 years for some government records, with security logs often required for at least 18 months to 7 years depending on sensitivity), and protected from deletion by administrators.
+- A Security Operations Centre (SOC) capability or equivalent 24x7 monitoring must be in place for PROTECTED environments.
+- An incident response plan aligned with ASD&#x27;s guidelines must be documented, tested, and executable; the agency must be notified of relevant incidents promptly.
+- Integration with or ability to provide log feeds to the agency&#x27;s SIEM may be required.
+
+**g. Physical Security**
+
+- Data centres hosting government data must meet physical security standards. For PROTECTED data, this typically requires data centres located in Australia that can demonstrate compliance with relevant physical security standards (e.g., AS/NZS ISO/IEC 27001 with physical security controls, or equivalent).
+
+**h. Personnel Security**
+
+- Staff with access to government data or systems must hold appropriate baseline security clearances or undergo background checks. For PROTECTED data, Baseline Vetting (formerly called NV1 or similar) is typically required for personnel with privileged access.
+- Security awareness training must be current and documented.
+
+**i. Backup and Recovery**
+
+- Regular, tested backups of government data must be maintained, with recovery time objectives (RTOs) and recovery point objectives (RPOs) agreed in the contract.
+- Backups must be protected from ransomware (e.g., immutable or offline copies).
+
+**j. Essential Eight**
+
+The ASD&#x27;s Essential Eight Maturity Model is not part of the ISM per se, but the ISM references ASD mitigation strategies and the Essential Eight has become a baseline expectation in Australian government contracts. You should plan to demonstrate compliance with the Essential Eight at the maturity level required by the agency (typically Maturity Level 2 or 3 for government work):
+
+1. Application control (whitelisting)
+2. Patch applications
+3. Configure Microsoft Office macro settings
+4. User application hardening
+5. Restrict administrative privileges
+6. Patch operating systems
+7. Multi-factor authentication
+8. Regular backups
+
+---
+
+### 3. Do You Need an IRAP Assessment Even Though You Are Not a Government Entity?
+
+**Short answer: Almost certainly yes, if the agency handles PROTECTED or higher classified information on your platform, and likely yes even for OFFICIAL: Sensitive in practice.**
+
+**What is IRAP?**
+
+The Information Security Registered Assessors Program (IRAP) is an ASD initiative that certifies independent cybersecurity professionals (IRAP assessors) to conduct assessments of information systems against ISM controls. An IRAP assessment produces a Security Assessment Report (SAR) that the agency uses to make its own risk-based accreditation decision.
+
+**IRAP applies to systems, not just government entities**
+
+A common misconception is that IRAP is only for government agencies. In reality, IRAP assessments are conducted on systems and platforms regardless of who owns or operates them. If a government agency is going to use your cloud platform to process, store, or transmit government information, the agency needs assurance that your platform meets ISM requirements. The primary mechanism for obtaining that assurance is an IRAP assessment of your platform.
+
+**Contractual requirement**
+
+For PROTECTED data and above: The agency will almost certainly contractually require that your platform undergo an IRAP assessment and that the resulting SAR be reviewed before the agency grants an Authority to Operate (ATO) or Authority to Connect (ATC). The agency&#x27;s CISO or Chief Security Officer is ultimately responsible for authorising the use of your service, and they will need an IRAP assessment to support that decision.
+
+For OFFICIAL: Sensitive: Practice varies. Some agencies accept lower-assurance mechanisms (e.g., self-attestation against ISM controls, ISO 27001 certification, SOC 2 Type II reports) for lower-classification workloads. However, many agencies now require or strongly prefer an IRAP assessment even for OFFICIAL: Sensitive. You should check your specific contract requirements and negotiate this early.
+
+For OFFICIAL (unclassified): An IRAP assessment may not be strictly required, but demonstrating ISM alignment through ISO 27001, SOC 2, or an IRAP assessment will significantly strengthen your position and reduce the agency&#x27;s procurement risk evaluation concerns.
+
+**What an IRAP assessment involves**
+
+1. Scoping: Define the system boundary — which infrastructure, services, and data flows are in scope.
+2. Documentation review: The assessor reviews your System Security Plan (SSP), security policies, network diagrams, configuration documentation, and evidence of control implementation.
+3. Technical testing: The assessor performs interviews, configuration reviews, and may conduct vulnerability scanning or penetration testing.
+4. Report: The assessor produces a SAR that identifies compliant controls, deficiencies, and residual risks.
+5. Remediation: You address findings; the agency then makes an accreditation decision.
+
+IRAP assessors are listed on the ASD website. You must engage a certified IRAP assessor — you cannot self-assess for IRAP purposes.
+
+**ASD Cloud Services Certification**
+
+If your services are likely to be used by multiple government agencies, you should consider pursuing listing on the ASD Cloud Services Certification Program (CSCP), which replaced the earlier Certified Cloud Services List (CCSL). Listed services have undergone formal IRAP assessment and provide a reusable assurance artefact that agencies can rely upon rather than commissioning their own assessment.
+
+---
+
+### 4. Practical Steps to Take Now
+
+1. **Identify the information classification** of the data your platform will process. This drives every other decision.
+
+2. **Review your contract carefully** for specific ISM control requirements, IRAP obligations, data sovereignty requirements, and incident notification timelines.
+
+3. **Conduct an internal gap assessment** against the ISM controls relevant to your classification level. The current ISM is available freely on the ASD website (cyber.gov.au) and is updated frequently — use the latest version.
+
+4. **Implement the Essential Eight** at the maturity level required, as this is likely to be a baseline expectation.
+
+5. **Engage an IRAP assessor early** — IRAP assessors are in demand and scoping/preparation takes time. Do not leave this until the contract is already live.
+
+6. **Prepare your System Security Plan (SSP)** — this is the foundational document for any IRAP assessment and for the agency&#x27;s accreditation decision. It should describe your system architecture, data flows, control environment, and residual risks.
+
+7. **Ensure data sovereignty** — confirm that government data will be stored and processed in Australia, and that offshore access (including by vendors or support staff) is either prohibited or subject to specific controls.
+
+8. **Establish incident response procedures** aligned with ASD&#x27;s guidelines and your contractual notification obligations.
+
+9. **Engage your agency contact&#x27;s CISO or information security team early** — they will be your primary point of contact for accreditation and will have specific requirements based on their own risk appetite and internal policies.
+
+---
+
+### 5. Key References
+
+- Australian Signals Directorate (ASD) — Information Security Manual: https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/ism
+- ASD Essential Eight Maturity Model: https://www.cyber.gov.au/resources-business-and-government/essential-cyber-security/essential-eight
+- Protective Security Policy Framework (PSPF): https://www.protectivesecurity.gov.au
+- IRAP Program information: https://www.cyber.gov.au/resources-business-and-government/assessments-and-certifications/irap
+- Cloud Services Certification Program (CSCP): https://www.cyber.gov.au/resources-business-and-government/assessments-and-certifications/cloud-services-certification-programme
+
+---
+
+### Summary
+
+As a private sector cloud provider contracted to serve an Australian federal government agency, your ISM obligations flow through your contract rather than directly through law, but they are binding and enforceable. The most critical controls focus on identity and access management, encryption, patch management, system hardening, network segmentation, logging and incident response, and the Essential Eight. An IRAP assessment is a practical necessity — not just a recommendation — for any system handling PROTECTED or OFFICIAL: Sensitive government data, and you should engage a certified IRAP assessor as early as possible in your program. The agency&#x27;s CISO will ultimately make the accreditation decision, but they will rely on your IRAP assessment to do so.
 </pre></div>
                 </div>
               </div>
