@@ -181,17 +181,31 @@ layout: null
 
     /* ── SKILL CARD ACCORDION ── */
     .skill-toggle {
-      width: 100%; background: none; border: none; padding: 0;
+      width: 100%;
+      background: var(--primary-light);
+      border: 1px solid #b8d0ed;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin: -0.2rem 0 0;
       text-align: left; cursor: pointer; font: inherit; color: inherit;
-      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
-    .skill-toggle:hover { opacity: 0.85; }
-    .skill-toggle h3 { margin: 0; flex: 1; }
+    .skill-toggle:hover { background: #d0e4f5; border-color: var(--primary); }
+    .skill-toggle[aria-expanded="true"] {
+      background: var(--primary);
+      border-color: var(--primary);
+      border-radius: 6px 6px 0 0;
+    }
+    .skill-toggle[aria-expanded="true"] h3 { color: #fff; }
+    .skill-toggle[aria-expanded="true"] .skill-chevron { color: #fff; }
+    .skill-toggle h3 { margin: 0; flex: 1; font-size: 1.05rem; }
     .skill-chevron {
-      font-size: 1.1rem; line-height: 1; color: var(--primary);
-      transition: transform 0.22s ease; flex-shrink: 0;
+      font-size: 1.2rem; line-height: 1; color: var(--primary);
+      transition: transform 0.22s ease; flex-shrink: 0; font-weight: bold;
     }
     .skill-toggle[aria-expanded="true"] .skill-chevron { transform: rotate(180deg); }
+    .skill-body { margin-top: 0; padding: 1rem 1.2rem 0.4rem; border: 1px solid #b8d0ed; border-top: none; border-radius: 0 0 6px 6px; }
     .skill-body { margin-top: 0.75rem; }
     .skill-body[hidden] { display: none; }
 
