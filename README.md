@@ -647,8 +647,6 @@ These skills were benchmarked using the [Claude Skill Creator](https://claude.ai
 | NIS2 | 5 | **96%** | 80% | +16% | Energy company EE/IE classification; SaaS provider Art. 21 obligations; Ransomware Art. 23 reporting workflow; ISO 27001 vs NIS2 gap analysis; DORA lex specialis interaction |
 | CCPA/CPRA | 5 | **100%** | 96% | +4% | E-commerce threshold analysis; Combined right-to-know and delete workflow; Ad tech sale vs sharing classification; GDPR-to-CCPA gap analysis; SPI classification for mobile app |
 
-Skills add the most measurable value on highly framework-specific tasks: clause-level precision for ISO 27001, CC criteria mapping for SOC 2, exact FedRAMP POA&M timeframes and document names, GDPR article citations, HIPAA regulatory section references, CSF 2.0 subcategory IDs, PCI DSS v4.0.1 requirement numbers, TSA Security Directive citations, ISO 42001 AIMS clause references, DORA Article citations and exact incident reporting timelines (4h/72h/1 month), DPDPA-specific terminology, CMMC practice IDs and SPRS scoring, NIST AI RMF category notation (GV-1 through MG-4.x) and trustworthiness metrics, SWIFT CSP architecture classification and CSCF v2025 control-specific guidance, ISM applicability marking precision (NC/OS/PROTECTED stacking rules, IRAP artefacts, chapter-level control citations), NIS2 entity classification (Annex I/II), Art. 21 measure detail, and Art. 23 incident reporting timeline specificity (24h/72h/1-month), and CCPA/CPRA-specific GPC signal obligation, SPI 15-business-day response SLA, and CPRA "sharing" vs. "sale" classification precision.
-
 📊 **[View the full eval results →](grc-skills-eval-results.html)**
 
 ---
